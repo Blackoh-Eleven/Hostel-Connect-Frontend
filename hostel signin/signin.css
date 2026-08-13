@@ -1,0 +1,578 @@
+:root {
+
+  /* Colors */
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+
+  --text: #111827;
+  --muted: #64748b;
+
+  --border: #e2e8f0;
+
+
+  /* Shape */
+  --radius: 12px;
+  --card-radius: 16px;
+
+
+  /* Layout */
+  --page-padding: 24px;
+  --field-height: 58px;
+
+
+  /* Effects */
+  --shadow:
+    0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+
+  min-height: 100vh;
+
+  background: var(--background);
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Main Page */
+
+.auth-page {
+
+  width: min(100%, 480px);
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding:
+    22px
+    var(--page-padding)
+    32px;
+
+  background: var(--surface);
+}
+
+
+/* Back Button*/
+
+.back-btn {
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 36px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  margin-bottom: 34px;
+}
+
+
+/*   Brand / Hero */
+
+.brand-hero {
+
+  position: relative;
+
+  min-height: 230px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  overflow: hidden;
+}
+
+
+.brand {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.brand-mark {
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    4px solid
+    var(--primary);
+
+  border-radius: 12px;
+
+  color: var(--primary);
+
+  font-size: 40px;
+
+  font-weight: 600;
+}
+
+
+.brand-name {
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+.brand-name span:last-child {
+  color: var(--primary);
+}
+
+
+/* House Image*/
+
+.house-image {
+
+  position: absolute;
+
+  right: -110px;
+  top: -55px;
+
+  width: 430px;
+  height: 360px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 50%;
+
+  opacity: 0.9;
+
+  z-index: 1;
+
+  mix-blend-mode: multiply;
+}
+
+
+/*  Sign IN  place*/
+
+.signin-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: -8px;
+}
+
+
+h1 {
+
+  font-size: 32px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+
+  font-weight: 600;
+}
+
+
+h1 span {
+  font-size: 28px;
+}
+
+
+.subtitle {
+
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+
+/*Form Place*/
+
+form {
+  margin-top: 38px;
+}
+
+
+.field-group {
+  margin-bottom: 22px;
+}
+
+
+label {
+
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+/*  Input */
+
+.input-wrap {
+
+  height: var(--field-height);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: var(--radius);
+
+  background: var(--surface);
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+
+.input-wrap:focus-within {
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(79, 70, 229, 0.10);
+}
+
+
+.input-icon {
+
+  color: #94a3b8;
+
+  font-size: 20px;
+
+  flex: 0 0 auto;
+}
+
+
+input {
+
+  width: 100%;
+
+  min-width: 0;
+
+  border: 0;
+
+  outline: 0;
+
+  color: var(--text);
+
+  background: transparent;
+
+  font-size: 15px;
+}
+
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* password see*/
+
+.password-toggle {
+
+  border: 0;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+}
+
+
+#displaymessage{
+  color:red;
+  position: absolute;
+  bottom: 39%;
+  display: none;
+}
+
+
+
+
+.forgot-link {
+
+  display: block;
+
+  width: fit-content;
+
+  margin:
+    -6px
+    0
+    28px
+    auto;
+
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/*  Priimary btn */
+
+.primary-btn {
+
+  width: 100%;
+
+  height: 58px;
+
+  border: 0;
+
+  border-radius: var(--radius);
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+.primary-btn:active {
+  transform: scale(0.99);
+}
+
+
+/*OR Divider*/
+
+.divider {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin:
+    30px
+    0
+    22px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+.divider span {
+
+  height: 1px;
+
+  flex: 1;
+
+  background: var(--border);
+}
+
+
+.divider b {
+  font-weight: 500;
+}
+
+
+
+
+.social-buttons {
+
+  display: grid;
+
+  gap: 12px;
+}
+
+
+.social-btn {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 54px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: var(--radius);
+
+  background: var(--surface);
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+
+.google-icon,
+.apple-icon {
+
+  position: absolute;
+
+  left: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.google-icon {
+  color: #4285f4;
+}
+
+
+.apple-icon {
+  color: #111827;
+}
+
+
+
+.signup-text {
+
+  margin-top: 28px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+.signup-text a {
+
+  color: var(--primary);
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  margin-left: 4px;
+}
+
+
+
+
+@media (max-width: 460px) {
+
+  :root {
+    --page-padding: 18px;
+  }
+
+
+  .brand-hero {
+    min-height: 205px;
+  }
+
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+
+  .house-image {
+    right: -150px;
+  }
+
+
+  h1 {
+    font-size: 29px;
+  }
+  
+
+}

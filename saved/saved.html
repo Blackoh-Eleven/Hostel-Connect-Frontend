@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saved | Hostel Connect</title>
+
+    <link rel="stylesheet" href="saved.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="topbar">
+
+        <div class="greeting-block">
+            <span class="greeting-sub">Your collection</span>
+            <h1 class="greeting-main">Saved Listings</h1>
+        </div>
+
+        <div class="header-actions">
+
+            <div class="icon-btn">
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+
+                </svg>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Saved Content -->
+
+    <main>
+
+        <section class="section">
+
+            <div class="section-head">
+
+                <h2 class="section-title">Your Saved Hostels</h2>
+
+                <span class="saved-count">3 saved</span>
+
+            </div>
+
+
+                 <!-- listing container place -->
+<div id="listingContainer">
+            <div class="listing-card">
+
+
+
+                </div>
+                </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Bottom nav-->
+
+    <div class="bottom-nav-wrap">
+
+        <div class="bottom-nav">
+
+
+            <!-- Home -->
+
+            <div class="nav-item"
+                onclick="navigateTo('home')">
+
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+
+                </svg>
+
+                <span>Home</span>
+
+            </div>
+
+
+       <!-- Saved -->
+
+            <div class="nav-item active"
+                onclick="navigateTo('saved')">
+
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+
+                </svg>
+
+                <span>Saved</span>
+
+            </div>
+
+
+            <!-- Post -->
+
+            <div class="nav-fab-slot"
+                onclick="navigateTo('post')">
+
+                <div class="nav-fab"
+                    aria-label="Post a listing">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <!-- Message  -->
+
+            <div class="nav-item"
+                onclick="navigateTo('message')">
+
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+
+                </svg>
+
+                <span>Messages</span>
+
+            </div>
+
+
+            <!-- Profile -->
+
+            <div class="nav-item"
+                onclick="navigateTo('profile')">
+
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+
+                </svg>
+
+                <span>Profile</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+
+    <div class="bottom-spacer"></div>
+
+
+    <script src="saved.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/8eaba6d24e.js" crossorigin="anonymous"></script>
+
+  <title>Hostel Connect — Sign In</title>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+
+  <main class="auth-page">
+
+    <button class="back-btn" aria-label="Go back">
+      &#8592;
+    </button>
+
+    <!-- Brand and house image -->
+    <section class="brand-hero">
+
+      <div class="brand">
+
+        <div class="brand-mark">
+          &#8962;
+        </div>
+
+        <div class="brand-name">
+          <span>Hostel</span>
+          <span>Connect</span>
+        </div>
+
+      </div>
+
+      <img
+        class="house-image"
+        src="house.png"
+        alt="Hostel building"
+      >
+
+    </section>
+
+
+    <!-- Sign in content -->
+    <section class="signin-content">
+
+      <h1>
+        Welcome back <span> &#128075;</span>
+      </h1>
+
+      <p class="subtitle">
+        Sign in to continue your journey<br>
+        to find the perfect hostel In Kwara State University Malete.
+      </p>
+
+
+      <form>
+
+          <!-- Matric Number -->
+  <div class="field-group">
+
+    <label for="matric">
+      Matric Number
+    </label>
+
+    <div class="input-wrap">
+
+      <span class="input-icon">
+        <i class="fa-solid fa-id-card"></i>
+      </span>
+
+      <input
+        id="matric"
+        type="text"
+        placeholder="Enter your matric number"
+        autocomplete="off"
+      >
+
+    </div>
+
+  </div>
+
+        <!-- Email -->
+        <div class="field-group">
+
+          <label for="email">
+            Email 
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">
+               &#9993;
+            </span>
+
+            <input
+              id="email"
+              type="text"
+              placeholder="Enter your email or phone number"
+              autocomplete="username"
+            >
+
+          </div>
+
+        </div>
+
+
+
+        
+
+
+        <!-- Password -->
+        <div class="field-group">
+
+          <label for="password">
+            Password
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">
+                 &#9817;
+            </span>
+
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            >
+
+            <button
+              class="password-toggle"
+              type="button"
+              aria-label="Show password"
+            >
+               &#128065;
+            </button>
+
+          </div>
+
+        </div>
+
+        <span id="displaymessage"></span>
+
+        <a class="forgot-link" href="#">
+          Forgot password?
+        </a>
+
+
+        <button class="primary-btn" type="submit" id="submit">
+          Sign in
+        </button>
+
+      </form>
+
+
+      <!-- Divider -->
+      <div class="divider">
+
+        <span></span>
+
+        <b>OR</b>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- Social login -->
+      <div class="social-buttons">
+
+        <button class="social-btn" type="button" id="signin-btn">
+
+          <span class="google-icon">
+            G
+          </span>
+
+          Continue with Google
+
+        </button>
+
+
+        <button class="social-btn" type="button">
+
+          <span class="apple-icon">
+            <strong><i class="fa-brands fa-apple"></i></strong>
+          </span>
+
+          Continue with Apple
+
+        </button>
+
+      </div>
+
+
+      <!-- Sign up -->
+      <p class="signup-text">
+
+        Don't have an account?
+
+        <a href="../hostel signup/signup.html">
+          Sign up
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+  <script src="signin.js"></script>
+</body>
+</html>

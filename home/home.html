@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — Hostel Connect</title>
+<script src="https://kit.fontawesome.com/8eaba6d24e.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="topbar">
+          <div class="icon-btn" aria-label="Menu" id="sidebaropen">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </div>
+    <div class="greeting-block">
+      <div class="greeting-sub" >Welcome back &#128075; <B id="greeting"></B></div>
+      <div class="greeting-main">Find your next hostel</div>
+    </div>
+    <div class="header-actions">
+      <div class="icon-btn" aria-label="Notifications">
+        <span class="notif-dot"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Search and Filter place -->
+  <div class="search-section">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search by area, e.g. Oke-Odo..." />
+      <div class="filter-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Pills Place -->
+  <div class="pill-row">
+    <div class="pill active">All</div>
+    <div class="pill">Single Room</div>
+    <div class="pill">Self-Con</div>
+    <div class="pill">Shared</div>
+    <div class="pill">Near Gate</div>
+    <div class="pill">Under ₦150k</div>
+  </div>
+
+  <!-- Near Campus (sideways)  -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-title">Closest to KWASU</div>
+      <a href="#" class="section-link">See all</a>
+    </div>
+    <div class="h-scroll">
+      <div class="mini-card">
+        <div class="mini-card-img">
+          <span class="mini-tag">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="mini-card-body">
+          <div class="mini-card-price">₦120k <span>/yr</span></div>
+          <div class="mini-card-loc">School Road</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-img">
+          <span class="mini-tag">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="mini-card-body">
+          <div class="mini-card-price">₦95k <span>/yr</span></div>
+          <div class="mini-card-loc">Alaga Hostel WestEnd</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-img">
+          <span class="mini-tag">Available</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="mini-card-body">
+          <div class="mini-card-price">₦140k <span>/yr</span></div>
+          <div class="mini-card-loc">Close to Tarmac</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  All Listings (feeds/fyp) -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-title">Recently listed</div>
+      <a href="#" class="section-link">Filter</a>
+    </div>
+
+
+    <div id="listingContainer"></div>
+
+    </div>
+  </div>
+
+  <div class="bottom-spacer"></div>
+
+  <!--  Bottom Nav -->
+
+
+     <div class="bottom-nav-wrap">
+    <div class="bottom-nav">
+
+  <div class="nav-item" onclick="navigateTo('home')">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  <span>Home</span>
+</div>
+
+<div class="nav-item" onclick="navigateTo('saved')">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+  <span>Saved</span>
+</div>
+
+<div class="nav-fab-slot" onclick="navigateTo('post')">
+  <div class="nav-fab" aria-label="Post a listing">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+  </div>
+</div>
+
+<div class="nav-item" onclick="navigateTo('message')">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span>Messages</span>
+</div>
+
+<!-- <div class="nav-item" onclick="window.location.href='../profile page/profile.html'"> -->
+    <div class="nav-item" onclick="navigateTo('profile')">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  <span>Profile</span>
+</div>
+
+
+   <div class="sidebar" id="sidebar">
+        <span class="cancelline"><i class="fa-solid fa-x" id="cancelbtn"></i></span>
+
+
+        <div class="prof">
+             <div class="profilecircle"></div>
+            <b id="boldusername">Blackoh Eleven</b>
+            <span id="sideactive"><b>status:</b>Active<i class="fa-regular fa-circle-dot"></i></span>
+        </div>
+
+    </div>
+
+
+    </div>
+  
+</div>
+
+
+  <script src="home.js"></script>
+</body>
+</html>
