@@ -36,7 +36,7 @@ form.addEventListener("submit", async function (e) {
     }
 
 
-  const res =  await fetch("https://hostel-connect-frontend-p7qs.onrender.com/signup", {
+  const res =  await fetch("https://hostel-connect-backend-a7sq.onrender.com/signup", {
         method: "POST",
         headers:{
             "Content-Type" : "application/json"
