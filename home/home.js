@@ -11,7 +11,7 @@ async function loadProfile() {
         
     })
 
-    console.log(token)
+    // console.log(token)
     const user = await res.json();
     console.log(user)
     let greet = document.getElementById('greeting').textContent = user.fullName
