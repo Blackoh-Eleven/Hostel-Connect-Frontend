@@ -3,7 +3,7 @@ async function loadProfile() {
     const token = localStorage.getItem("token");
     console.log(token)
 
-    const res = await fetch("http://localhost:3000/home", {
+    const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/home", {
         
         headers: {
             Authorization: `Bearer ${token}`
@@ -13,7 +13,7 @@ async function loadProfile() {
 
     // console.log(token)
     const user = await res.json();
-    console.log(user)
+    // console.log(user.password)
     let greet = document.getElementById('greeting').textContent = user.fullName
     // console.log(status, res.status);
 }
@@ -22,7 +22,7 @@ loadProfile();
 
 async function loadPost() {
     try {
-        const res = await fetch("http://localhost:3000/posts");
+        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/posts");
         const posts = await res.json();
 
         if (!res.ok) {
@@ -78,7 +78,7 @@ saveBtn.addEventListener('click', function () {
     async function bookMark(postId) {
     const token = localStorage.getItem('token');
 
-    const res = await fetch(`http://localhost:3000/posts/${postId}/save`, {
+    const res = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/${postId}/save`, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`
