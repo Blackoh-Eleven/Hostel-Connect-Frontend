@@ -35,6 +35,35 @@ async function loadPost() {
                 createListingCard(post);
             });
         }
+
+        // searchbar search
+        const searchInput = document.getElementById("searchInput");
+const results = document.getElementById("resultsofsearch");
+
+searchInput.addEventListener("input", () => {
+
+    const search = searchInput.value.toLowerCase();
+        if (search === "") {
+        results.innerHTML = "";
+        return;
+    }
+
+    const filteredItems = posts.filter(item =>
+      
+        item.location.toLowerCase().includes(search)
+        
+    );
+    console.log(filteredItems)
+
+
+    // onclick =""
+
+    results.innerHTML = filteredItems
+        .map(item => `<button class="dynamicareasearch">${item.title}</button>`)
+        .join("");
+});
+
+
         // search icons functions
 document.getElementById('selfcon-btn').addEventListener('click', function () {
 
@@ -52,7 +81,9 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
             <div class="mini-card">
 
                 <div class="mini-card-img">
+                <img src="${post.images}" alt="Hostel">
                     <span class="mini-tag">Available</span>
+                    
 
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
@@ -85,12 +116,13 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
 });
 
 
-                document.getElementById('singleroom-btn').addEventListener('click', function(){
-                const results = posts.filter(item =>
-        item.roomType.toLowerCase().includes("single room")
+document.getElementById('singleroom-btn').addEventListener('click', function () {
+
+    const results = posts.filter(item =>
+        item.roomType.toLowerCase().includes("single-room")
     );
 
-        const container = document.getElementById('resultsdisplay');
+    const container = document.getElementById('resultsdisplay');
 
     container.innerHTML = "";
 
@@ -100,18 +132,10 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
             <div class="mini-card">
 
                 <div class="mini-card-img">
+                <img src="${post.images}" alt="Hostel">
                     <span class="mini-tag">Available</span>
 
-                    <svg viewBox="0 0 24 24" fill="none"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-
-                    </svg>
+         
                 </div>
 
                 <div class="mini-card-body">
@@ -129,8 +153,13 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
             </div>
         `;
     });
-    document.getElementById('section-title').textContent = 'Available Single-Rooms'
+    document.getElementById('section-title').textContent = 'Available Self-Contain'
 });
+
+
+    
+
+  
 
 
                 document.getElementById('shared-btn').addEventListener('click', function(){
@@ -148,6 +177,7 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
 
                 <div class="mini-card-img">
                     <span class="mini-tag">Available</span>
+                    <img src="${post.images}" alt="Hostel">
 
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
@@ -196,7 +226,7 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
 
                 <div class="mini-card-img">
                     <span class="mini-tag">Available</span>
-
+                    <img src="${post.images}" alt="Hostel">
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
                         stroke-linecap="round"
@@ -386,9 +416,6 @@ document.getElementById("sidebaropen").addEventListener("click", function () {
 
  //bookMark('64f1a2b3c4d5e6f7890abcde')
 
- document.getElementById('selfcon-btn').addEventListener("click",function(){
-
- })
 
 
 //  input.addEventListener("input", () => {
@@ -401,3 +428,18 @@ document.getElementById("sidebaropen").addEventListener("click", function () {
 // });
 
 
+// const searchInput = document.getElementById("searchInput");
+// const results = document.getElementById("results");
+
+// searchInput.addEventListener("input", () => {
+
+//     const search = searchInput.value.toLowerCase();
+
+//     const filteredItems = posts.filter(item =>
+//         item.toLowerCase().includes(search)
+//     );
+
+//     results.innerHTML = filteredItems
+//         .map(item => `<p>${item}</p>`)
+//         .join("");
+// });
