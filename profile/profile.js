@@ -2,7 +2,7 @@ async function userData (){
 const token = localStorage.getItem("token");
     console.log(token)
 
-    const res = await fetch("http://localhost:3000/home", {
+    const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/home", {
         
         headers: {
             Authorization: `Bearer ${token}`
