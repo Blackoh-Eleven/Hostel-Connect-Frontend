@@ -34,7 +34,7 @@
   <div class="search-section">
     <div class="search-bar">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" placeholder="Search by area, e.g. Oke-Odo..." />
+      <input type="text" placeholder="Search by area, e.g. WestEnd,Marple..." />
       <div class="filter-chip">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg>
       </div>
@@ -44,51 +44,22 @@
   <!-- Category Pills Place -->
   <div class="pill-row">
     <div class="pill active">All</div>
-    <div class="pill">Single Room</div>
-    <div class="pill">Self-Con</div>
-    <div class="pill">Shared</div>
-    <div class="pill">Near Gate</div>
-    <div class="pill">Under ₦150k</div>
+    <div class="pill" id="singleroom-btn" >Single Room</div>
+    <div class="pill" id="selfcon-btn">Self-Con</div>
+    <div class="pill" id="shared-btn">Shared</div>
+    <div class="pill" id="neargate-btn">Near Gate</div>
+    <div class="pill" id="underprice">Under ₦250k</div>
   </div>
 
   <!-- Near Campus (sideways)  -->
   <div class="section">
     <div class="section-head">
-      <div class="section-title">Closest to KWASU</div>
+      <div class="section-title" id="section-title">Closest to KWASU</div>
       <a href="#" class="section-link">See all</a>
     </div>
-    <div class="h-scroll">
-      <div class="mini-card">
-        <div class="mini-card-img">
-          <span class="mini-tag">Available</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <div class="h-scroll" id="resultsdisplay">
         </div>
-        <div class="mini-card-body">
-          <div class="mini-card-price">₦120k <span>/yr</span></div>
-          <div class="mini-card-loc">School Road</div>
-        </div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-card-img">
-          <span class="mini-tag">Available</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="mini-card-body">
-          <div class="mini-card-price">₦95k <span>/yr</span></div>
-          <div class="mini-card-loc">Alaga Hostel WestEnd</div>
-        </div>
-      </div>
-      <div class="mini-card">
-        <div class="mini-card-img">
-          <span class="mini-tag">Available</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="mini-card-body">
-          <div class="mini-card-price">₦140k <span>/yr</span></div>
-          <div class="mini-card-loc">Close to Tarmac</div>
-        </div>
-      </div>
-    </div>
+  </div>
   </div>
 
   <!--  All Listings (feeds/fyp) -->
