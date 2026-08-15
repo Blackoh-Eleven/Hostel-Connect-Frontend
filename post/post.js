@@ -26,7 +26,7 @@ form.addEventListener("submit", async function (e) {
 
     try {
 
-        const uploadRes = await fetch("http://localhost:3000/upload", {
+        const uploadRes = await fetch("https://hostel-connect-backend-a7sq.onrender.com/upload", {
             method: "POST",
             body: formData
         });
@@ -101,7 +101,7 @@ form.addEventListener("submit", async function (e) {
 
 // send to backend
 
-        const res = await fetch("http://localhost:3000/posts", {
+        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/posts", {
 
             method: "POST",
 

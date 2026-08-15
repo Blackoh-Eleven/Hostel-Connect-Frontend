@@ -72,13 +72,15 @@ card.innerHTML = `
 
 const saveBtn = card.querySelector('.save-btn');
 saveBtn.addEventListener('click', function () {
-    console.log(post._id);
+
+    let postId = post._id
+    console.log(postId);
 
 
     async function bookMark(postId) {
     const token = localStorage.getItem('token');
 
-    const res = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/${postId}/save`, {
+    const res = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/posts/${postId}/save`, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -86,10 +88,15 @@ saveBtn.addEventListener('click', function () {
     });
 
     const data = await res.json();
-    console.log(data);  
+    console.log(data); 
+    
+//     const data = await res.text();
+
+// console.log("Status:", res.status);
+// console.log("Response:", data);
 }
 
-bookMark(post._id);
+bookMark(postId);
 
 });
 

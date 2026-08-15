@@ -29,7 +29,7 @@ async function loadSaved() {
     const token = localStorage.getItem("token");
     console.log(token)
 
-    const res = await fetch("http://localhost:3000/home", {
+    const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/home", {
         
         headers: {
             Authorization: `Bearer ${token}`
@@ -42,6 +42,8 @@ async function loadSaved() {
 
 
     let saved = user.savedPosts;
+    let savedcount = saved.length
+    document.getElementById('saved-count').textContent = `${savedcount} Saved`
     saved.forEach(bookmark=>{
 
             const card = document.createElement("div");
