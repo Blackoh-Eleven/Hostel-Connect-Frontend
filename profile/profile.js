@@ -22,6 +22,11 @@ const token = localStorage.getItem("token");
 }
 
 userData()
+
+document.getElementById('logout-btn').addEventListener('click' ,function(){
+    localStorage.removeItem("token")
+    window.location.href = "../hostel signin/signin.html"
+})
  
  
  
