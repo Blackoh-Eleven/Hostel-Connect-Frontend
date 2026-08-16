@@ -1,4 +1,5 @@
 let allPosts = [];
+console.log('yes')
 async function loadProfile() {
     const token = localStorage.getItem("token");
     console.log(token)
@@ -322,13 +323,13 @@ card.innerHTML = `
 
 
 const saveBtn = card.querySelector('.save-btn');
-saveBtn.addEventListener('click', function () {
+saveBtn.addEventListener('click', async function () {
 
     let postId = post._id
     console.log(postId);
 
 
-    async function bookMark(postId) {
+    // async function bookMark(postId) {
     const token = localStorage.getItem('token');
 
     const res = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/posts/${postId}/save`, {
@@ -338,16 +339,39 @@ saveBtn.addEventListener('click', function () {
         }
     });
 
+    
     const data = await res.json();
     console.log(data); 
+
+
+    if(data.message ===  'Post saved'){
+        const saver = this.querySelector(".save-btn");
+        this.classList.add("saver");      //tells each bookmark buttton to be specific
+
+        const icon = this.querySelector("i");
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+
+        //         icon.classList.remove("fa-regular");
+        // icon.classList.add("fa-solid");
+
+    }else{
+                const icon = this.querySelector("i");
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+
+    }
+
+       
+
     
 //     const data = await res.text();
 
 // console.log("Status:", res.status);
 // console.log("Response:", data);
-}
+// }
 
-bookMark(postId);
+// bookMark(postId);
 
 });
 

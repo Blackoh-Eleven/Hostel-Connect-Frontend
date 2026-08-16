@@ -340,6 +340,10 @@ body {
     transform: scale(0.92);
 }
 
+/* .bookmar{
+  background:var( --color-primary);
+} */
+
 /* Bottom Nav */
 .bottom-nav-wrap {
   position: fixed;
