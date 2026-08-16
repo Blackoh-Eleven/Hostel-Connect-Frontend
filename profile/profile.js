@@ -28,6 +28,32 @@ document.getElementById('logout-btn').addEventListener('click' ,function(){
     window.location.href = "../hostel signin/signin.html"
 })
  
+
+
+
+
+
+async function userPostData (){
+const token = localStorage.getItem("token");
+    console.log(token)
+
+    const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/mylistings", {
+        
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+        
+    })
+
+    
+    const userPost = await res.json();
+    console.log(user)
+
+
+
+}
+
+userPostData()
  
  
 
