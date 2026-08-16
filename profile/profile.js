@@ -18,6 +18,7 @@ const token = localStorage.getItem("token");
     document.getElementById("profile-email").textContent = user.email
         document.getElementById("profile-phone").textContent = user.phoneNumber
     document.getElementById("profile-matric").textContent = user.matricNumber
+    document.getElementById('numberofsaved').textContent =user.savedPosts.length
 
 }
 
@@ -47,7 +48,10 @@ const token = localStorage.getItem("token");
 
     
     const userPost = await res.json();
-    console.log(user)
+    console.log(userPost)
+
+    document.getElementById('numberofposts').textContent =userPost.length
+     
 
 
 
@@ -55,6 +59,11 @@ const token = localStorage.getItem("token");
 
 userPostData()
  
+
+document.getElementById('gotolistpage').addEventListener('click' , function(){
+
+    window.location.href = "../profile/mylist.html";
+})
  
 
 
