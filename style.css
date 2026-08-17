@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(100, 22, 100, 0.65),
+            rgba(20, 5, 20, 0.75)
+        ),
+        url("/frontend/hostel signup/kwasu1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+h1{
+        margin: 0 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    line-height: 1;
+}
