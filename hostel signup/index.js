@@ -8,23 +8,23 @@ form.addEventListener("submit", async function (e) {
 
         let fullName = document.getElementById('name')
     let fullNameValue = fullName.value;
-    fullName.value = ''
+  
 
             let matricNumber = document.getElementById('matric')
     let matricNumberValue = matricNumber.value;
-    matricNumber.value = ''
+   
 
     let eMail = document.getElementById('email')
-    let eMailValue = eMail.value;
-    eMail.value = '';
+    let eMailValue = eMail.value.toLowerCase();
+    
 
             let phoneNumber = document.getElementById('phone')
     let phoneNumberValue = phoneNumber.value;
-    phoneNumber.value = ''
+   
 
     let passWord = document.getElementById('password')
     let passWordValue = passWord.value
-    passWord.value = ''
+   
 
 
     let userInfo = {
@@ -44,13 +44,23 @@ form.addEventListener("submit", async function (e) {
         body:JSON.stringify(userInfo)
     })
 
-    const data = await res.json()
-    console.log(data)
 
-    if (data){
-        document.getElementById('signup-btn').innerText = 'signup successful'
-        document.getElementById('signup-btn').style.background = 'green'
-    }
+const data = await res.json();
+console.log(data);
+
+if (data.message === 'Signup Successful.Kindly proceed to Login') {
+    document.getElementById('signup-btn').innerText = 'Signup Successful';
+    document.getElementById('signup-btn').style.background = 'green';
+    fullName.value = ''
+     matricNumber.value = ''
+     eMail.value = '';
+      phoneNumber.value = ''
+       passWord.value = ''
+       window.location.href = "../hostel signin/signin.html";
+}else{
+    document.getElementById('errorlogs').textContent = data.message
+     document.getElementById('signup-btn').innerText = 'Sign up';
+}
 
 
 
