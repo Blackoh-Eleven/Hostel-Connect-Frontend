@@ -5,15 +5,15 @@ form.addEventListener("submit", async function (e) {
 
     let matricNumber = document.getElementById("matric");
     let matricNumberValue = matricNumber.value;
-    matricNumber.value = "";
+
 
     let eMail = document.getElementById("email");
     let eMailValue = eMail.value;
-    eMail.value = "";
+    
 
     let passWord = document.getElementById("password");
     let passWordValue = passWord.value;
-    passWord.value = "";
+    
 
     let userInfo = {
         matricNumber: matricNumberValue,
@@ -36,6 +36,9 @@ form.addEventListener("submit", async function (e) {
         if(data.token){
             localStorage.setItem("token", data.token)
             const tok = localStorage.getItem("token")
+            matricNumberValue = ''
+            eMail.value = "";
+            passWord.value = "";
              window.location.href = "../home/home.html";
              
         }else{
@@ -46,3 +49,15 @@ form.addEventListener("submit", async function (e) {
         console.error(err);
     }
 });
+
+
+let password = document.getElementById('password')
+let showpassword = document.getElementById('password-toggle')
+showpassword.addEventListener('click',function(){
+
+    if (password.type === 'password') {
+        password.type = 'text';
+    } else {
+        password.type = 'password';
+    }
+})

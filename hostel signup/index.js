@@ -11,11 +11,11 @@ form.addEventListener("submit", async function (e) {
   
 
             let matricNumber = document.getElementById('matric')
-    let matricNumberValue = matricNumber.value;
+    let matricNumberValue = matricNumber.value.trim();
    
 
     let eMail = document.getElementById('email')
-    let eMailValue = eMail.value.toLowerCase();
+    let eMailValue = eMail.value.toLowerCase().trim();
     
 
             let phoneNumber = document.getElementById('phone')
@@ -23,7 +23,7 @@ form.addEventListener("submit", async function (e) {
    
 
     let passWord = document.getElementById('password')
-    let passWordValue = passWord.value
+    let passWordValue = passWord.value.trim()
    
 
 
@@ -66,3 +66,29 @@ if (data.message === 'Signup Successful.Kindly proceed to Login') {
 
     
 })
+
+
+let password = document.getElementById('password')
+let showpassword = document.getElementById('password-toggle')
+showpassword.addEventListener('click',function(){
+
+    if (password.type === 'password') {
+        password.type = 'text';
+    } else {
+        password.type = 'password';
+    }
+})
+
+
+let confirmedPassword = document.getElementById('confirm')
+let confirmedPasswordToggle= document.getElementById('password-toggle')
+ 
+confirmedPasswordToggle.addEventListener('click',function(){
+
+    if (confirmedPassword.type === 'password') {
+        confirmedPassword.type = 'text';
+    } else {
+        confirmedPassword.type = 'password';
+    }
+})
+
