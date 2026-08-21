@@ -382,6 +382,28 @@ saveBtn.addEventListener('click', async function () {
 
 loadPost();
 
+
+
+
+async function loadNotifications() {
+    const token = localStorage.getItem('token');
+
+    const res = await fetch(
+        'https://hostel-connect-backend-a7sq.onrender.com/notifications',
+        {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
+    );
+
+    const notifications = await res.json();
+
+    console.log(notifications);
+}
+
+loadNotifications()
+
 //bottom nav
 
 function navigateTo(page) {
