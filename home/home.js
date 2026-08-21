@@ -489,3 +489,16 @@ document.getElementById("sidebaropen").addEventListener("click", function () {
 //         .map(item => `<p>${item}</p>`)
 //         .join("");
 // });
+
+
+const pills = document.querySelectorAll(".pill");
+
+pills.forEach(pill => {
+  pill.addEventListener("click", () => {
+
+    pills.forEach(p => p.classList.remove("active"));
+
+    pill.classList.add("active");
+
+  });
+});
