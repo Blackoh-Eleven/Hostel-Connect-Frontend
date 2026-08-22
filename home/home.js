@@ -1,5 +1,96 @@
 let allPosts = [];
 console.log('yes')
+
+let notificationbox = document.getElementById('insidenotification')
+let notificationboxstyle = window.getComputedStyle(notificationbox)
+notificationbox.textContent = 'notification upadte will be rolled out soon'
+
+document.getElementById('notify-icon').addEventListener('click',function(){
+    // console.log(locationboxstyle.display)
+    if(notificationboxstyle.display === 'block'){
+        notificationbox.style.display = 'none'
+    }else{
+        notificationbox.style.display = 'block'
+    }
+    
+})
+
+// let locationbox = document.getElementById('location-box')
+// let locationboxstyle = window.getComputedStyle(locationbox)
+
+// document.getElementById('filter-chip').addEventListener('click',function(){
+//     // console.log(locationboxstyle.display)
+//     if(locationboxstyle.display === 'block'){
+//         locationbox.style.display = 'none'
+//     }else{
+//         locationbox.style.display = 'block'
+//     }
+
+
+//     // filter work
+//  document.querySelectorAll('.location-item').forEach(button => {
+
+//     button.addEventListener('click', function () {
+
+//         let location = this.textContent.trim()
+
+//         console.log(this.textContent);
+
+
+
+
+
+
+
+//             const searchInput = document.getElementById("searchInput");
+// const results = document.getElementById("resultsofsearch");
+
+// searchInput.value = location
+
+//     const filteredItems = posts.filter(item =>
+      
+//         item.location.toLowerCase().includes(search)
+        
+//     );
+//     console.log(filteredItems)
+
+
+//     // onclick =""
+
+//     results.innerHTML = filteredItems
+//         .map(item => `<button class="dynamicareasearch">${item.title}</button>`)
+//         .join("");
+
+//     });
+
+// });
+
+//      })
+
+
+
+    
+
+
+document.getElementById("sortPosts").addEventListener("change", function () {
+
+  if (this.value === "recent") {
+    document.getElementById('section-posts-filter').textContent = 'Recently Listed'
+  }
+
+  if (this.value === "low") {
+    document.getElementById('section-posts-filter').textContent = 'Lowest Price'
+  }
+
+  if (this.value === "premium") {
+    document.getElementById('section-posts-filter').textContent = 'Premium Hostels'
+  }
+
+});
+
+// document.getElementById('section-title').textContent = 
+
+
 async function loadProfile() {
     const token = localStorage.getItem("token");
     console.log(token)
@@ -71,6 +162,61 @@ searchInput.addEventListener("input", () => {
 });
 
 
+
+let locationbox = document.getElementById('location-box')
+let locationboxstyle = window.getComputedStyle(locationbox)
+
+document.getElementById('filter-chip').addEventListener('click',function(){
+    // console.log(locationboxstyle.display)
+    if(locationboxstyle.display === 'block'){
+        locationbox.style.display = 'none'
+    }else{
+        locationbox.style.display = 'block'
+    }
+
+
+    // filter work
+ document.querySelectorAll('.location-item').forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        let location = this.textContent.trim()
+
+        console.log(this.textContent);
+
+    const searchInput = document.getElementById("searchInput");
+const results = document.getElementById("resultsofsearch");
+
+searchInput.value = location
+
+            const search = searchInput.value.toLowerCase();
+        if (search === "") {
+        results.innerHTML = "";
+        return;
+    }
+
+    const filteredItems = posts.filter(item =>
+      
+        item.location.toLowerCase().includes(search)
+        
+    );
+    console.log(filteredItems)
+
+
+    // onclick =""
+
+    results.innerHTML = filteredItems
+        .map(item => `<button class="dynamicareasearch">${item.title}</button>`)
+        .join("");
+
+    });
+
+});
+
+     })
+
+
+
         // search icons functions
 document.getElementById('selfcon-btn').addEventListener('click', function () {
 
@@ -119,7 +265,7 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
             </div>
         `;
     });
-    document.getElementById('section-title').textContent = 'Available Self-Contain'
+    document.getElementById('section-title').textContent = 'Room and Self-Contain'
 });
 
 
@@ -160,7 +306,7 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
             </div>
         `;
     });
-    document.getElementById('section-title').textContent = 'Available Self-Contain'
+    document.getElementById('section-title').textContent = 'Available Single Room'
 });
 
 
@@ -216,6 +362,53 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
     document.getElementById('section-title').textContent = 'Available Shared Apartment'
 });
 
+
+              document.getElementById('neargate-btn').addEventListener('click', function(){
+                const results = posts.filter(item =>
+        item.roomType.toLowerCase().includes("shared")
+    );
+        const container = document.getElementById('resultsdisplay');
+
+    container.innerHTML = "";
+
+    results.forEach(post => {
+
+        container.innerHTML += `
+            <div class="mini-card">
+
+                <div class="mini-card-img">
+                    <span class="mini-tag">Available</span>
+                    <img src="${post.images}" alt="Hostel">
+
+                    <svg viewBox="0 0 24 24" fill="none"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+
+                    </svg>
+                </div>
+
+                <div class="mini-card-body">
+
+                    <div class="mini-card-price">
+                        ₦${post.price} <span>/yr</span>
+                    </div>
+
+                    <div class="mini-card-loc">
+                        ${post.location}
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+    });
+    document.getElementById('section-title').textContent = 'Hostels Near School Gate'
+});
 
 
                 document.getElementById('underprice').addEventListener('click', function(){
@@ -350,6 +543,19 @@ saveBtn.addEventListener('click', async function () {
     console.log(data); 
 
 
+
+    if (data.saved) {
+    const icon = this.querySelector("i");
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
+
+} else {
+    const icon = this.querySelector("i");
+    icon.classList.remove("fa-solid");
+    icon.classList.add("fa-regular");
+}
+
+
     // if(data.saved){
     //    const icon = this.querySelector("i");
 
@@ -362,25 +568,6 @@ saveBtn.addEventListener('click', async function () {
     //     icon.classList.remove("fa-solid");
     //     icon.classList.add("fa-regular");
     // }
-
-    if (data.saved) {
-
-    // this.classList.add("saver");
-
-    const icon = this.querySelector("i");
-    icon.classList.remove("fa-regular");
-    icon.classList.add("fa-solid");
-
-} else {
-
-    // this.classList.remove("saver");
-
-    const icon = this.querySelector("i");
-    icon.classList.remove("fa-solid");
-    icon.classList.add("fa-regular");
-
-    
-}
 
 });
 
