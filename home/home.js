@@ -23,7 +23,13 @@ loadProfile();
 
 async function loadPost() {
     try {
-        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/posts");
+            const token = localStorage.getItem("token");
+        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/posts",{
+             headers: {
+            Authorization: `Bearer ${token}`
+        }
+        });
+        
         const posts = await res.json();
 
         if (!res.ok) {
@@ -31,9 +37,9 @@ async function loadPost() {
         } else {
             console.log(posts);
 
-            
             posts.forEach(post => {
                 createListingCard(post);
+
             });
         }
 
@@ -304,8 +310,8 @@ card.innerHTML = `
 
         <img src="${post.images[0]}" alt="Hostel">
 
-        <button class="save-btn" >
-            <i class="fa-regular fa-bookmark"></i>
+ <button class="save-btn">
+            <i class="${post.saved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
         </button>
     </div>
 
@@ -344,34 +350,37 @@ saveBtn.addEventListener('click', async function () {
     console.log(data); 
 
 
-    if(data.message ===  'Post saved'){
-        const saver = this.querySelector(".save-btn");
-        this.classList.add("saver");      //tells each bookmark buttton to be specific
+    // if(data.saved){
+    //    const icon = this.querySelector("i");
 
-        const icon = this.querySelector("i");
-        icon.classList.remove("fa-regular");
-        icon.classList.add("fa-solid");
+    // if (data.saved) {
+    //     this.classList.add("saver");
+    //     icon.classList.remove("fa-regular");
+    //     icon.classList.add("fa-solid");
+    // } else {
+    //     this.classList.remove("saver");
+    //     icon.classList.remove("fa-solid");
+    //     icon.classList.add("fa-regular");
+    // }
 
-        //         icon.classList.remove("fa-regular");
-        // icon.classList.add("fa-solid");
+    if (data.saved) {
 
-    }else{
-                const icon = this.querySelector("i");
-        icon.classList.remove("fa-solid");
-        icon.classList.add("fa-regular");
+    // this.classList.add("saver");
 
-    }
+    const icon = this.querySelector("i");
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
 
-       
+} else {
+
+    // this.classList.remove("saver");
+
+    const icon = this.querySelector("i");
+    icon.classList.remove("fa-solid");
+    icon.classList.add("fa-regular");
 
     
-//     const data = await res.text();
-
-// console.log("Status:", res.status);
-// console.log("Response:", data);
-// }
-
-// bookMark(postId);
+}
 
 });
 
@@ -458,37 +467,6 @@ document.getElementById("sidebaropen").addEventListener("click", function () {
 });
 
 
-
-
- //bookMark('64f1a2b3c4d5e6f7890abcde')
-
-
-
-//  input.addEventListener("input", () => {
-
-//     const value = input.value.toLowerCase();
-
-//     const results = items.filter(item =>
-//         item.toLowerCase().includes(value)
-//     );
-// });
-
-
-// const searchInput = document.getElementById("searchInput");
-// const results = document.getElementById("results");
-
-// searchInput.addEventListener("input", () => {
-
-//     const search = searchInput.value.toLowerCase();
-
-//     const filteredItems = posts.filter(item =>
-//         item.toLowerCase().includes(search)
-//     );
-
-//     results.innerHTML = filteredItems
-//         .map(item => `<p>${item}</p>`)
-//         .join("");
-// });
 
 
 const pills = document.querySelectorAll(".pill");
