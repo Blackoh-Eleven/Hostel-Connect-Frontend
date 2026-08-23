@@ -72,23 +72,9 @@ document.getElementById('notify-icon').addEventListener('click',function(){
     
 
 
-document.getElementById("sortPosts").addEventListener("change", function () {
 
-  if (this.value === "recent") {
-    document.getElementById('section-posts-filter').textContent = 'Recently Listed'
-  }
 
-  if (this.value === "low") {
-    document.getElementById('section-posts-filter').textContent = 'Lowest Price'
-  }
 
-  if (this.value === "premium") {
-    document.getElementById('section-posts-filter').textContent = 'Premium Hostels'
-  }
-
-});
-
-// document.getElementById('section-title').textContent = 
 
 
 async function loadProfile() {
@@ -123,15 +109,109 @@ async function loadPost() {
         
         const posts = await res.json();
 
+
+
         if (!res.ok) {
             console.error(posts.message);
         } else {
             console.log(posts);
+            // sort based on recently listed
+            const sortedRecentlyListedPosts = [...posts].sort(
+                (a,b) => new Date(b.createdAt) - new Date(a.createdAt) )
+
+                // console.log(sortedRecentlyListedPosts)
+
+                //   sort based on lowest price
+                const sortLowestPricePost = [...posts].sort(
+                    (a,b) => (a.price)  - (b.price)
+                    
+                )
+                // console.log(sortLowestPricePost)
+
+                // sort baesd on highest price //premium
+  
+                const sortHighestPricePost = [...posts].sort(
+                    (a,b) => (b.price) - (a.price)
+                )
+
 
             posts.forEach(post => {
+                createListingCard(post) ;
+
+            });
+            
+
+
+
+
+
+
+
+
+
+
+document.getElementById("sortPosts").addEventListener("change", function () {
+     document.getElementById('listingContainer').innerHTML = ``
+
+     if (this.value === "default") {
+    document.getElementById('section-posts-filter').textContent = ' Listings'
+    console.log(posts)
+                   posts.forEach(post => {
+                createListingCard(post);
+            });
+  }
+
+  if (this.value === "recent") {
+    document.getElementById('section-posts-filter').textContent = 'Recently Listed'
+                   sortedRecentlyListedPosts.forEach(post => {
+                createListingCard(post);
+
+
+            });
+  
+
+            
+  }
+
+  if (this.value === "low") {
+    document.getElementById('section-posts-filter').textContent = 'Lowest Price'
+                   sortLowestPricePost.forEach(post => {
                 createListingCard(post);
 
             });
+                           
+
+  }
+
+  if (this.value === "premium") {
+    document.getElementById('section-posts-filter').textContent = 'Premium Hostels'
+               sortHighestPricePost.forEach(post => {
+                createListingCard(post);
+
+            });
+   
+
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         // searchbar search
