@@ -3,7 +3,7 @@ console.log('yes')
 
 let notificationbox = document.getElementById('insidenotification')
 let notificationboxstyle = window.getComputedStyle(notificationbox)
-notificationbox.textContent = 'notification upadte will be rolled out soon'
+notificationbox.textContent = 'notification update will be rolled out soon so calm down Werey'
 
 document.getElementById('notify-icon').addEventListener('click',function(){
     // console.log(locationboxstyle.display)
@@ -94,6 +94,7 @@ async function loadProfile() {
     // console.log(user.password)
     let greet = document.getElementById('greeting').textContent = user.fullName
     // console.log(status, res.status);
+    document.getElementById('boldusername').textContent = user.fullName
 }
 
 loadProfile();
@@ -717,6 +718,7 @@ let sidecomputed = window.getComputedStyle(sidebar)
 console.log(sidecomputed.display)
 
 document.getElementById("cancelbtn").addEventListener("click", function () {
+    console.log('work')
     if (sidecomputed.display === "block") {
         sidebar.style.display = "none";
         console.log(sidebar.style.display)
@@ -749,9 +751,32 @@ pills.forEach(pill => {
 });
 
 
+// const darkModeBtn = document.getElementById("darkModeBtn");
+
+// darkModeBtn.addEventListener("click", () => {
+//     document.body.classList.toggle("dark-mode");
+//     // console.log('hi')
+// });
+
+
 const darkModeBtn = document.getElementById("darkModeBtn");
 
 darkModeBtn.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
-    // console.log('hi')
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+    }
+
 });
+
+if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+}
+
+
+// side bar username 
+
