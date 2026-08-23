@@ -747,3 +747,11 @@ pills.forEach(pill => {
 
   });
 });
+
+
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+darkModeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    // console.log('hi')
+});
