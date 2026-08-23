@@ -778,5 +778,11 @@ if (localStorage.getItem("darkMode") === "enabled") {
 }
 
 
+document.getElementById('logout').addEventListener('click' ,function(){
+    localStorage.removeItem("token")
+    window.location.href = "../hostel signin/signin.html"
+})
+
+
 // side bar username 
 
