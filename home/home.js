@@ -136,7 +136,7 @@ async function loadPost() {
 
 
             posts.forEach(post => {
-                createListingCard(post) ;
+                createListingCard(post) 
 
             });
             

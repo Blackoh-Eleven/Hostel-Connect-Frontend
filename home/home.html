@@ -145,19 +145,61 @@
 </div>
 
 
-   <div class="sidebar" id="sidebar">
-        <span class="cancelline"><i class="fa-solid fa-x" id="cancelbtn"></i></span>
+ <!-- Hamburger button to open sidebar -->
+<button class="hamburger" id="hamburgerBtn">
+    <i class="fa-solid fa-bars"></i>
+</button>
 
+<!-- Overlay to dim background + allow click-outside-to-close -->
+<div class="overlay" id="overlay"></div>
 
-        <div class="prof">
-             <div class="profilecircle"></div>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <span class="cancelline"><i class="fa-solid fa-x" id="cancelbtn"></i></span>
+
+    <div class="prof">
+        <div class="profilecircle"></div>
+        <div class="profinfo">
             <b id="boldusername">Blackoh Eleven</b>
-            <span id="sideactive"><b>status:</b>Active<i class="fa-regular fa-circle-dot"></i></span>
+            <span id="sideactive">
+                <i class="fa-regular fa-circle-dot"></i>
+                <b>Status:</b> Active
+            </span>
         </div>
-
     </div>
 
+    <ul class="sidelist">
+        <li>
+            <i class="fa-regular fa-rectangle-list"></i>
+            <span>My Listings</span>
+        </li>
+        <li>
+            <i class="fa-regular fa-user"></i>
+            <span>Edit Profile</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-sliders"></i>
+            <span>Preferences</span>
+        </li>
+        <li>
+    <i class="fa-solid fa-moon"></i>
+    <span>Dark Mode</span>
+</li>
+        <li>
+            <i class="fa-regular fa-circle-question"></i>
+            <span>Help & Support</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-circle-info"></i>
+            <span>About</span>
+        </li>
+    </ul>
 
+    <div class="sidelogout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </div>
+</div>
     </div>
   
 </div>

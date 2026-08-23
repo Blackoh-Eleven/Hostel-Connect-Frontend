@@ -544,29 +544,27 @@ body {
 /* Spacer for content to overlap nav during scroll */
 .bottom-spacer { height: 110px; }
 
-
+/* 
 .sidebar{
     width: 50%;
     position: absolute;
-    height: 70vh;
-    background:rgb(185, 151, 151);
-    /* position: fixed; */
-    bottom: 12em;
-    right: 13em;
+    height: 60vh;
+    background: #FDFDFD;
+    bottom: 15em;
+    right: 12em;
     display: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
 }
 
 .cancelline{
     display: flex;
     justify-content: flex-end;
-    /* background:blue; */
     height: 20px;
-    /* width: 10px; */
 }
 
 .fa-x{
-    /* background:orange; */
-    /* position: fixed; */
     width: 40px;
     height: 40px;
     top: 2%;
@@ -574,43 +572,270 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    color:red;
+    color: #EF4444;
 }
-
 
 .prof{
     width: 100%;
     height: fit-content;
-    /* background:blue; */
     padding: 2px;
-    border-bottom: 1px solid black;
-
+    border-bottom: 1px solid #E5E7EB;
 }
-
 
 .profilecircle{
     width: 80px;
     height: 80px;
-    /* background:red; */
-    border-radius:50%;
-    border: 1px solid red;
+    border-radius: 50%;
+    border: 1px solid #4F46E5;
+    background: #EEF2FF;
 }
 
 
 
-/* LISTING POST */
 
-.listing-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-
-    margin-bottom: var(--space-5);
-
+.profinfo {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+#sideactive {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #46e546;
+    font-weight: 500;
+}
+
+.sidelist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidelist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px;
+    cursor: pointer;
+    color: #111827;
+    font-size: 0.95rem;
+    transition: background 0.15s ease;
+}
+
+.sidelist li:hover {
+    background: #F3F4F6;
+    border-radius: 8px;
+}
+
+.sidelogout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px;
+    cursor: pointer;
+    color: #EF4444;
+    font-weight: 500;
+} */
+
+/* .sidebar {
+    width: 340px;
+    max-width: 90%;
+    position: fixed;
+    height: auto;
+    max-height: 80vh;
+    background: var(--color-surface);
+    top: 50%;
+    right: 30px;
+    transform: translateY(-150%);
+    display: none;
+    font-family: var(--font-family);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid var(--color-border);
+} */
+
+/* .sidebar {
+    width: 340px;
+    max-width: 70%;
+    position: fixed;
+    height: auto;
+    max-height: 80vh;
+    background: var(--color-surface);
+    bottom: 300px;
+    right: 100px;
+    display: none;
+    font-family: var(--font-family);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid var(--color-border);
+} */
+/* @media (max-width: 380px) {
+    .sidebar {
+        right: 20px;
+        bottom: 250%;
+    }
+} */
+
+
+
+.sidebar {
+    width: 340px;
+    max-width: 70%;
+    position: fixed;
+    height: auto;
+    max-height: 80vh;
+    background: var(--color-surface);
+
+    right: 100px;
+    bottom: 350px;
+
+    display: none;
+    font-family: var(--font-family);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid var(--color-border);
+}
+
+@media  (max-width: 360px) {
+    .sidebar {
+        right: 100px;
+        bottom: 200px;
+    }
+  }
+
+/* Close button area */
+.cancelline {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    padding: 0 8px;
+}
+
+.fa-x {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.fa-x:hover {
+    background: var(--color-primary-light);
+    color: var(--color-danger);
+}
+
+
+/* Profile section */
+.prof {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.profilecircle {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+
+/* Profile information */
+.profinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#boldusername {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+}
+
+#sideactive {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--color-success);
+    font-weight: 500;
+}
+
+
+/* Sidebar links */
+.sidelist {
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+}
+
+.sidelist li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 12px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidelist li i {
+    width: 20px;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.sidelist li:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.sidelist li:hover i {
+    color: var(--color-primary);
+}
+
+
+/* Logout */
+.sidelogout {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 4px 12px 12px;
+    padding: 13px 12px;
+    cursor: pointer;
+    color: var(--color-danger);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    border-top: 1px solid var(--color-border);
+    transition: background 0.15s ease;
+}
+
+.sidelogout:hover {
+    background: #FEF2F2;
 }
 
 
