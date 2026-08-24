@@ -1,9 +1,8 @@
 let allPosts = [];
-console.log('yes')
 
 let notificationbox = document.getElementById('insidenotification')
 let notificationboxstyle = window.getComputedStyle(notificationbox)
-notificationbox.textContent = 'notification update will be rolled out soon so calm down Werey'
+// notificationbox.textContent = 'notification update will be rolled out soon so calm down Werey'
 
 document.getElementById('notify-icon').addEventListener('click',function(){
     // console.log(locationboxstyle.display)
@@ -12,6 +11,7 @@ document.getElementById('notify-icon').addEventListener('click',function(){
     }else{
         notificationbox.style.display = 'block'
     }
+    // console.log('work wok')
     
 })
 
@@ -79,7 +79,7 @@ document.getElementById('notify-icon').addEventListener('click',function(){
 
 async function loadProfile() {
     const token = localStorage.getItem("token");
-    console.log(token)
+    // console.log(token)
 
     const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/home", {
         
@@ -606,7 +606,7 @@ const saveBtn = card.querySelector('.save-btn');
 saveBtn.addEventListener('click', async function () {
 
     let postId = post._id
-    console.log(postId);
+    // console.log(postId);
 
 
     // async function bookMark(postId) {
@@ -621,7 +621,7 @@ saveBtn.addEventListener('click', async function () {
 
     
     const data = await res.json();
-    console.log(data); 
+    // console.log(data); 
 
 
 
@@ -637,18 +637,7 @@ saveBtn.addEventListener('click', async function () {
 }
 
 
-    // if(data.saved){
-    //    const icon = this.querySelector("i");
 
-    // if (data.saved) {
-    //     this.classList.add("saver");
-    //     icon.classList.remove("fa-regular");
-    //     icon.classList.add("fa-solid");
-    // } else {
-    //     this.classList.remove("saver");
-    //     icon.classList.remove("fa-solid");
-    //     icon.classList.add("fa-regular");
-    // }
 
 });
 
@@ -677,6 +666,72 @@ async function loadNotifications() {
     const notifications = await res.json();
 
     console.log(notifications);
+
+notifications.forEach(notificationMainMsg => {
+    notificationbox.innerHTML += `
+        <div class="each-notif" data-id="${notificationMainMsg._id}">
+            <span>${notificationMainMsg.message}</span>
+            ${!notificationMainMsg.read ? '<span class="unread-dot"></span>' : ''}
+        </div>
+    `;
+
+
+});
+
+
+document.querySelectorAll('.each-notif').forEach(notification => {
+    notification.addEventListener('click', async function () {
+
+const notificationId = this.dataset.id;
+
+console.log(notificationId);
+
+const response = await fetch(
+    `https://hostel-connect-backend-a7sq.onrender.com/notifications/${notificationId}/read`,
+    {
+        method: 'PATCH',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+    }
+);
+
+// const result = await response.text();
+
+// console.log(response.status);
+// console.log(result);
+const result = await response.json();
+
+console.log(result);
+
+if (response.ok) {
+    const dot = this.querySelector('.unread-dot');
+
+    if (dot) {
+        dot.remove();
+    }
+}
+
+        
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 loadNotifications()
@@ -730,7 +785,7 @@ document.getElementById("cancelbtn").addEventListener("click", function () {
 document.getElementById("sidebaropen").addEventListener("click", function () {
     if (sidecomputed.display === "none") {
         sidebar.style.display = "block";
-        console.log(sidebar.style.display)
+        // console.log(sidebar.style.display)
         
     }
 });

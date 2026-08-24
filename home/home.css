@@ -102,6 +102,8 @@ body {
 
 .icon-btn svg { width: 19px; height: 19px; stroke: var(--color-text-primary); }
 
+/* notification */
+
 .notif-dot {
   position: absolute;
   top: 8px;
@@ -112,16 +114,89 @@ body {
   background: var(--color-danger);
   border: 1.5px solid var(--color-surface);
 }
+/* =========================
+   NOTIFICATION BOX
+========================= */
 
-.insidenotification{
-  height: 150px;
-  width: 150px;
-  background:rgba(7, 6, 7, 0.5);
-  position: absolute;
-  top: 90px;
-  right: 20px;
-  color: #fff;
-  display: none;
+.insidenotification {
+    width: 300px;
+    max-height: 350px;
+
+    padding: 10px;
+
+    background: rgba(7, 6, 7, 0.95);
+    color: #fff;
+
+    position: absolute;
+    top: 90px;
+    right: 20px;
+
+    display: none;
+
+    border-radius: 10px;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   EACH NOTIFICATION
+========================= */
+
+.each-notif {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    width: 100%;
+    padding: 12px 10px;
+
+    background: transparent;
+    color: #fff;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+
+/* Remove border from the last notification */
+
+.each-notif:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   UNREAD DOT
+========================= */
+
+.unread-dot {
+    width: 8px;
+    height: 8px;
+
+    min-width: 8px;
+
+    background: red;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   OPTIONAL HOVER
+========================= */
+
+.each-notif:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .header-actions { display: flex; align-items: center; gap: var(--space-3); }
@@ -912,6 +987,21 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Image itself */
