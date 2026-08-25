@@ -15,6 +15,13 @@ document.getElementById('notify-icon').addEventListener('click',function(){
     
 })
 
+
+// let toastbox = document.getElementById('toast')
+
+// setTimeout(()=>{
+// toastbox.style.display = 'none'
+// },3000)
+
 // let locationbox = document.getElementById('location-box')
 // let locationboxstyle = window.getComputedStyle(locationbox)
 
@@ -601,9 +608,13 @@ card.innerHTML = `
     </div>
 `;
 
-
+let toastbox = document.getElementById('toast');
 const saveBtn = card.querySelector('.save-btn');
 saveBtn.addEventListener('click', async function () {
+
+                
+ 
+
 
     let postId = post._id
     // console.log(postId);
@@ -621,19 +632,44 @@ saveBtn.addEventListener('click', async function () {
 
     
     const data = await res.json();
+    console.log(data.saved)
     // console.log(data); 
 
+    function showMessage(){
+
+    if (data.saved === true){
+            toastbox.textContent = `Added to saved`
+                 toastbox.style.display = 'flex'
+          setTimeout(()=>{
+                  toastbox.style.display = 'none'
+             },3000)
+    }else if(data.saved === false){
+                    toastbox.textContent = `Removed from saved`
+                 toastbox.style.display = 'flex'
+          setTimeout(()=>{
+                  toastbox.style.display = 'none'
+             },3000)
+    }
+}
 
 
     if (data.saved) {
+        showMessage()
     const icon = this.querySelector("i");
     icon.classList.remove("fa-regular");
     icon.classList.add("fa-solid");
 
+
+
+
+
 } else {
+
     const icon = this.querySelector("i");
     icon.classList.remove("fa-solid");
     icon.classList.add("fa-regular");
+
+    showMessage()
 }
 
 

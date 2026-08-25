@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     min-height: 100vh;
 
@@ -17,7 +17,7 @@ body {
             rgba(100, 22, 100, 0.65),
             rgba(20, 5, 20, 0.75)
         ),
-        url("hostel signup/homepage.jpg");
+        url("hostel signup/homepage_enhanced.jpg");
 
     background-size: cover;
     background-position: center;
@@ -33,5 +33,351 @@ h1{
     flex-direction: column;
     align-items: center;
 
-    line-height: 1;
+    line-height: 1; */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #111827;
+
+    background:
+        linear-gradient(
+            rgba(100, 22, 100, 0.65),
+            rgba(20, 5, 20, 0.75)
+        ),
+        url("hostel signup/homepage_enhanced.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+.navbar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px clamp(20px, 6vw, 80px);
+
+    border-bottom: 1px solid #E5E7EB;
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+
+.logo span {
+    color: #4F46E5;
+}
+
+
+.nav-signup {
+    border: none;
+
+    background: #4F46E5;
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.nav-signup:hover {
+    background: #4338CA;
+    transform: translateY(-1px);
+}
+
+
+
+   /* HERO */
+
+
+.hero {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 70px 20px;
+}
+
+
+.hero-content {
+    width: min(800px, 100%);
+
+    text-align: center;
+}
+
+
+/* Launch badge */
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    margin-bottom: 25px;
+
+    border-radius: 50px;
+
+    background: #EEF2FF;
+    border: 1px solid #E0E7FF;
+
+    color: #4F46E5;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Main heading */
+
+h1 {
+    font-size: clamp(42px, 8vw, 76px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+h1 span {
+    color: #4F46E5;
+}
+
+
+/* Description */
+
+.hero-text {
+    max-width: 600px;
+
+    margin: 0 auto 45px;
+
+    color: #6B7280;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    line-height: 1.7;
+}
+
+
+/* countdown */
+
+.countdown-section h2 {
+    font-size: 18px;
+
+    color: #6B7280;
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+}
+
+
+.countdown {
+    display: inline-block;
+
+    padding: 20px 28px;
+
+    background: white;
+
+    border: 1px solid #E0E7FF;
+
+    border-radius: 14px;
+
+    color: #4F46E5;
+
+    font-size: clamp(22px, 5vw, 40px);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.08);
+
+    margin-bottom: 30px;
+}
+
+
+/* cta */
+
+.main-signup {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+
+    background: #4F46E5;
+    color: white;
+
+    padding: 14px 27px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+.main-signup span {
+    font-size: 20px;
+
+    transition: 0.25s ease;
+}
+
+
+.main-signup:hover {
+    background: #4338CA;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+
+.main-signup:hover span {
+    transform: translateX(4px);
+}
+
+
+/* costruction text */
+
+.construction {
+    margin-top: 25px;
+
+    color: #9CA3AF;
+
+    font-size: 14px;
+}
+
+
+/* footer */
+
+footer {
+    text-align: center;
+
+    padding: 25px 20px;
+
+    border-top: 1px solid #E5E7EB;
+
+    color: #9CA3AF;
+
+    font-size: 13px;
+}
+
+
+footer span {
+    color: #4F46E5;
+
+    font-weight: 600;
+}
+
+
+.year {
+    margin-top: 6px;
+}
+
+
+/* small screen */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 20px;
+    }
+
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    .nav-signup {
+        padding: 9px 15px;
+
+        font-size: 13px;
+    }
+
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .hero-text {
+        margin-bottom: 35px;
+    }
+
+
+    .countdown {
+        width: 100%;
+
+        padding: 18px 10px;
+
+        font-size: 21px;
+
+        letter-spacing: 0;
+    }
+
+
+    .main-signup {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+

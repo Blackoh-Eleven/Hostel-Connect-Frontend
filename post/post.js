@@ -1,6 +1,16 @@
 const token = localStorage.getItem('token');
 
 const form = document.querySelector("form");
+const toastbox = document.getElementById('toast');
+
+function showToast(message) {
+    toastbox.textContent = message;
+    toastbox.style.display = 'flex';
+
+    setTimeout(() => {
+        toastbox.style.display = 'none';
+    }, 3000);
+}
 
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -122,20 +132,29 @@ form.addEventListener("submit", async function (e) {
         if (!res.ok) {
 
             console.error(data.message);
+            showToast('Post not sent');
 
             document.getElementById('submit').innerText = 'Post';
 
             return;
         }
+             showToast('Post is Sent');
+             document.getElementById('submit').innerText = 'Post';
 // alhamdulilahi
+
 
         console.log("POST CREATED SUCCESSFULLY");
 
-        document.getElementById('submit').innerText = 'Post';
+
+            
+
+
 
     } catch (err) {
 
         console.error(err);
+
+        showToast('Something went wrong');
 
         document.getElementById('submit').innerText = 'Post';
     }

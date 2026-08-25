@@ -1,23 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hostel Connect</title>
 </head>
+
 <body>
-   <h1>Hostel Connect under construction.</h1> 
 
-   <h3>Click the button Below Book Hostel Now</h3>
+    <header class="navbar">
 
-   <h4>Developer: <span>Blackoh</span></h4>
-   <p>2026</p>
+        <div class="logo">
+            <span>Hostel</span> Connect
+        </div>
 
-<button onclick="window.location.href = 'hostel signup/signup.html';">
-    Sign up
-</button>
-   <script src="hostel-connect.js"></script>
+        <button class="nav-signup"
+            onclick="window.location.href = 'hostel signup/signup.html';">
+            Sign up
+        </button>
+
+    </header>
+
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🚀 Launching Soon
+            </div>
+
+            <h1>
+                Find Your Next
+                <span>Hostel.</span>
+            </h1>
+
+            <p class="hero-text">
+                Hostel Connect makes it easier for students to find
+                hostels and connect directly with other students.
+            </p>
+
+
+            <div class="countdown-section">
+
+                <h2>Launch Countdown</h2>
+
+                <div class="countdown" id="time-space">
+                    Loading...
+                </div>
+
+            </div>
+
+
+            <button class="main-signup"
+                onclick="window.location.href = 'hostel signup/signup.html';">
+                Get Started
+                <span>→</span>
+            </button>
+
+
+            <p class="construction">
+                Hostel Connect is currently under construction.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Developer:
+            <span>Blackoh</span>
+        </p>
+
+        <p class="year">
+            © 2026 Hostel Connect
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const targetDate =
+            new Date("August 31, 2026 00:00:00").getTime();
+
+
+        setInterval(() => {
+
+            const now = new Date().getTime();
+
+            const distance = targetDate - now;
+
+
+            if (distance <= 0) {
+
+                document.getElementById("time-space").textContent =
+                    "We're Live! 🎉";
+
+                return;
+            }
+
+
+            const days =
+                Math.floor(
+                    distance / (1000 * 60 * 60 * 24)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (distance / (1000 * 60 * 60)) % 24
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (distance / (1000 * 60)) % 60
+                );
+
+
+            const seconds =
+                Math.floor(
+                    (distance / 1000) % 60
+                );
+
+
+            document.getElementById("time-space").textContent =
+                `${days} Days : ${hours} Hrs : ${minutes} M : ${seconds} Sec`;
+
+        }, 1000);
+
+    </script>
+
 </body>
+
 </html>
+```
