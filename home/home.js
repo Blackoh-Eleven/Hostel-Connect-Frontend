@@ -305,7 +305,7 @@ searchInput.value = location
 
 
 
-        // search icons functions
+        // HORIZONATAL SEARCh ICON
 document.getElementById('selfcon-btn').addEventListener('click', function () {
 
     const results = posts.filter(item =>
@@ -584,12 +584,13 @@ function createListingCard(post) {
     const card = document.createElement("div");
 
     card.classList.add("listing-card");
+    if (!post.postedBy) return;
 
 card.innerHTML = `
     <div class="listing-img">
         <span class="listing-tag">Available</span>
-
-        <img src="${post.images[0]}" alt="Hostel">
+       
+         <img src="${post.images[0]}" alt="Hostel">
 
  <button class="save-btn">
             <i class="${post.saved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
@@ -605,13 +606,62 @@ card.innerHTML = `
         <p>${post.location}</p>
 
         <p>${post.roomType} • ${post.title}</p>
+
+         <P class="poster-details"></P>
+
+        <button class="more" data-details="${post.postedBy.fullName}" data-phone="${post.postedBy.phoneNumber}">more</button>
     </div>
-`;
+`
+let moreBtns = document.querySelectorAll('.more');
+// if (!post.postedBy) return;
+
+
+// moreBtns.forEach(morebtn =>  morebtn.addEventListener('click', function () {
+//         console.log(this.dataset.location);
+//         document.querySelectorAll('.testing').textContent = this.dataset.location
+//     })
+// )
+
+
+moreBtns.forEach(morebtn => {
+    morebtn.addEventListener('click', function () {
+        console.log(this.dataset.location);
+
+        const testing = document.querySelector('.poster-details');
+
+        console.log(testing);
+
+       this.parentElement.querySelector('.poster-details').textContent = `Listed By ${this.dataset.details}
+
+       Contact via whatsapp ${this.dataset.phone}
+       `;
+    });
+});
+
+;
+
+
+
+
+
+
+
+
+
+
+// moreBtns.forEach(morebtn =>  morebtn.addEventListener('click', function () {
+//         console.log(this.dataset.location);
+//         document.getElementById('testing').textContent = this.dataset.location
+//     })
+// )
+
+
+
 
 let toastbox = document.getElementById('toast');
 const saveBtn = card.querySelector('.save-btn');
 saveBtn.addEventListener('click', async function () {
-
+navigator.vibrate(100);
                 
  
 
