@@ -661,9 +661,16 @@ moreBtns.forEach(morebtn => {
 let toastbox = document.getElementById('toast');
 const saveBtn = card.querySelector('.save-btn');
 saveBtn.addEventListener('click', async function () {
-navigator.vibrate(100);
-                
- 
+
+
+        try {
+        navigator.vibrate?.(100);
+    } catch (error) {
+        console.log('Vibration not available');
+    }
+
+
+
 
 
     let postId = post._id
@@ -688,7 +695,7 @@ navigator.vibrate(100);
     function showMessage(){
 
     if (data.saved === true){
-            toastbox.textContent = `Added to saved`
+             toastbox.textContent = `Added to saved`
                  toastbox.style.display = 'flex'
           setTimeout(()=>{
                   toastbox.style.display = 'none'
