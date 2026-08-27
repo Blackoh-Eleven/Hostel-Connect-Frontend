@@ -66,6 +66,136 @@ document.getElementById('gotolistpage').addEventListener('click' , function(){
 })
  
 
+let editProfileBtn = document.getElementById('editProfile')
+editProfileBtn.addEventListener('click',function(){
+    console.log('settings active')
+     overlay.classList.remove("hidden");
+})
+
+
+// openBtn.addEventListener("click", () => {
+//     overlay.classList.remove("hidden");
+// });
+
+cancelBtn.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+});
+
+saveBtn.addEventListener("click", async () => {
+
+    // send PATCH request
+    const response = await fetch("/posts/" + postId, {
+        method: "PATCH",
+        body: JSON.stringify({
+            title: title.value
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        overlay.classList.add("hidden"); // auto close
+    }
+});
+
+
+
+
+
+
+
+
+// settinfgs open
+
+const settingsBtn = document.getElementById("settingsBtn");
+const settingsOverlay = document.getElementById("settingsOverlay");
+const closeSettings = document.getElementById("closeSettings");
+
+
+/* OPEN SETTINGS */
+
+settingsBtn.addEventListener("click", () => {
+
+    settingsOverlay.classList.add("active");
+
+});
+
+
+/* CLOSE SETTINGS */
+
+closeSettings.addEventListener("click", () => {
+
+    settingsOverlay.classList.remove("active");
+
+});
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+settingsOverlay.addEventListener("click", (event) => {
+
+    if (event.target === settingsOverlay) {
+
+        settingsOverlay.classList.remove("active");
+
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('viewsaved').addEventListener('click', function(){
+    console.log('hi')
+                window.location.href = "../saved/saved.html";
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function navigateTo(page) {
 

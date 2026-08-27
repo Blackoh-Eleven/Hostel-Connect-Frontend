@@ -171,9 +171,7 @@ body {
 }
 
 
-/* =========================
-   UNREAD DOT
-========================= */
+   /* inside notification unread dot */
 
 .unread-dot {
     width: 8px;
@@ -1117,7 +1115,7 @@ p.poster-details{
 
 
 
-
+/* edit profile oeverlay */
 
 
 

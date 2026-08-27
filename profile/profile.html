@@ -20,7 +20,7 @@
             <h1>My Profile</h1>
         </div>
 
-        <button class="icon-btn">
+        <button class="settings-btn" id="settingsBtn">
             <svg viewBox="0 0 24 24"
                 fill="none"
                 stroke-width="2"
@@ -35,7 +35,313 @@
 
     </header>
 
+    <div id="overlay" class="overlay hidden">
+    <div class="modal">
+        <button id="cancelBtn">Cancel</button>
 
+        <input id="title" type="text">
+
+        <button id="saveBtn">Save</button>
+    </div>
+</div>
+
+<!-- SETTINGS OVERLAY -->
+
+<div class="settings-overlay" id="settingsOverlay">
+
+    <div class="settings-modal">
+
+        <div class="settings-header">
+
+            <h2>Settings</h2>
+
+            <button class="close-settings" id="closeSettings">
+
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <div class="settings-section">
+
+            <h3>Account</h3>
+
+            <button class="settings-item" id="settingsEditProfile">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>Account Information</strong>
+                    <span>View Your Account Info</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+
+            <button class="settings-item" id="locationSettings">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>Location Settings</strong>
+                    <span>Manage your preferred location</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <div class="settings-section">
+
+            <h3>Activity</h3>
+
+            <button class="settings-item" id="myActivity">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <polyline points="3 12 7 12 10 4 14 20 17 12 21 12"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>My Activity</strong>
+                    <span>View your activity on Hostel Connect</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <div class="settings-section">
+
+            <h3>Community</h3>
+
+            <button class="settings-item" id="feedback">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>Feedback</strong>
+                    <span>Tell us what you think</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+
+            <button class="settings-item" id="communityGuidelines">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>Community Guidelines</strong>
+                    <span>Learn how Hostel Connect works</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+
+            <button class="settings-item" id="inviteFriends">
+
+                <div class="settings-icon">
+
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <line x1="19" y1="8" x2="19" y2="14"/>
+                        <line x1="22" y1="11" x2="16" y2="11"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="settings-text">
+                    <strong>Invite Friends</strong>
+                    <span>Invite students to Hostel Connect</span>
+                </div>
+
+                <svg class="settings-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <polyline points="9 18 15 12 9 6"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <button class="settings-logout" id="settingsLogout">
+
+            <svg viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path d="M10 17l5-5-5-5"/>
+                <path d="M15 12H3"/>
+                <path d="M21 19V5a2 2 0 0 0-2-2h-6"/>
+
+            </svg>
+
+            <span>Log Out</span>
+
+        </button>
+
+    </div>
+
+</div>
                    <!-- profile card -->
 
     <main class="profile-content">
@@ -59,14 +365,14 @@
             </div>
 
             <div class="profile-name" id="profile-name">
-                John Doe
+                Big Blackoh
             </div>
 
             <div class="profile-school">
                 KWASU Student
             </div>
 
-            <button class="edit-profile">
+            <button class="edit-profile" id="editProfile">
                 Edit Profile
             </button>
 
@@ -232,7 +538,7 @@
 
             <div class="account-list">
 
-                <button class="account-item">
+                <button class="account-item" >
 
                     <div>
                         <strong id="gotolistpage">My Listings</strong>
@@ -252,7 +558,7 @@
                 </button>
 
 
-                <button class="account-item">
+                <button class="account-item" id="viewsaved">
 
                     <div>
                         <strong>Saved Listings</strong>

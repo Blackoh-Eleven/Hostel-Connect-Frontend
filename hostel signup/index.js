@@ -1,3 +1,9 @@
+const backBtn = document.getElementById("backBtn");
+
+backBtn.addEventListener("click", () => {
+    history.back();
+});
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", async function (e) {

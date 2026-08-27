@@ -656,6 +656,28 @@ moreBtns.forEach(morebtn => {
 // )
 
 
+// edit profile 
+
+
+// saveBtn.addEventListener("click", async () => {
+
+//     // send PATCH request
+//     const response = await fetch("/posts/" + postId, {
+//         method: "PATCH",
+//         body: JSON.stringify({
+//             title: title.value
+//         }),
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     });
+
+//     if (response.ok) {
+//         overlay.classList.add("hidden"); // auto close
+//     }
+// });
+
+
 
 
 let toastbox = document.getElementById('toast');
@@ -759,6 +781,8 @@ async function loadNotifications() {
     const notifications = await res.json();
 
     console.log(notifications);
+    console.log(notifications.read)
+
 
 notifications.forEach(notificationMainMsg => {
     notificationbox.innerHTML += `
@@ -768,7 +792,17 @@ notifications.forEach(notificationMainMsg => {
         </div>
     `;
 
+   console.log(notificationMainMsg.read);
 
+const notifDot = document.querySelector(".notif-dot");
+
+const hasUnreadNotification = notifications.some(
+    notification => notification.read === false
+);
+
+if (!hasUnreadNotification && notifDot) {
+    notifDot.remove();
+}
 });
 
 
@@ -796,6 +830,7 @@ const response = await fetch(
 const result = await response.json();
 
 console.log(result);
+
 
 if (response.ok) {
     const dot = this.querySelector('.unread-dot');
@@ -934,3 +969,16 @@ document.getElementById('logout').addEventListener('click' ,function(){
 
 // side bar username 
 
+
+
+
+
+
+// editprofilebtn.addEventListener("click", () => {
+//     // overlay.classList.remove("hidden");
+//     console.log('working')
+// });
+
+// cancelBtn.addEventListener("click", () => {
+//     overlay.classList.add("hidden");
+// });
