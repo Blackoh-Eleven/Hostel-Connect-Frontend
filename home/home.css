@@ -1800,7 +1800,7 @@ color: var(--color-text-primary);
 
 @media (max-width: 500px) {
     .nofunctiontoast {
-        bottom: 720px;
+        bottom: 520px;
         max-width: calc(100% - 30px);
         padding: 12px 15px;
         font-size: 13px;

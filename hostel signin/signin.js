@@ -28,7 +28,7 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
-document.getElementById('google').addEventListener('click',function(){
+document.getElementById('signin-btn').addEventListener('click',function(){
     showToast('You cant signin with Google at the moment')
 })
 
