@@ -1,3 +1,63 @@
+// toast
+
+let toastTimer;
+
+function showToast(message, duration = 3000) {
+
+    const toastfunctionless = document.getElementById("nofunctiontoast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    if (!toastfunctionless || !toastMessage) return;
+
+    // remove previous imer
+    clearTimeout(toastTimer);
+
+    // message
+    toastMessage.textContent = message;
+
+    // Show toast
+    toastfunctionless.classList.add("show");
+
+    // Hide after duration
+    toastTimer = setTimeout(() => {
+        toastfunctionless.classList.remove("show");
+    }, duration);
+}
+
+document.getElementById('account').addEventListener('click',function(){
+    showToast('Dont Fret!! account view will be updated soon')
+})
+
+
+
+document.getElementById('locationSettings').addEventListener('click',function(){
+    showToast('Dont Fret About Feature will be updated soon')
+})
+
+document.getElementById('activity').addEventListener('click',function(){
+    showToast('Dont Fret Activity Feature will be updated soon')
+})
+
+document.getElementById('feedback').addEventListener('click',function(){
+    showToast('Dont Fret! Feedback will be updated soon')
+})
+
+document.getElementById('communityGuidelines').addEventListener('click',function(){
+    showToast('Dont fret! Commuinty and Guidelines will be updated soon')
+})
+
+
+document.getElementById('inviteFriends').addEventListener('click',function(){
+    showToast('Dont fret! Invite your Friends will be updated soon')
+})
+
+document.getElementById('logout').addEventListener('click',function(){
+        localStorage.removeItem("token")
+    window.location.href = "../hostel signin/signin.html"
+})
+
+
+
 async function userData (){
 const token = localStorage.getItem("token");
     console.log(token)
@@ -60,10 +120,6 @@ const token = localStorage.getItem("token");
 userPostData()
  
 
-document.getElementById('gotolistpage').addEventListener('click' , function(){
-
-    window.location.href = "../profile/mylist.html";
-})
  
 
 let editProfileBtn = document.getElementById('editProfile')
@@ -73,30 +129,30 @@ editProfileBtn.addEventListener('click',function(){
 })
 
 
-// openBtn.addEventListener("click", () => {
-//     overlay.classList.remove("hidden");
-// });
+
 
 cancelBtn.addEventListener("click", () => {
     overlay.classList.add("hidden");
 });
 
 saveBtn.addEventListener("click", async () => {
+    
+showToast(`Dont fret! This feature isn't decided yet`)
 
     // send PATCH request
-    const response = await fetch("/posts/" + postId, {
-        method: "PATCH",
-        body: JSON.stringify({
-            title: title.value
-        }),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
+    // const response = await fetch("/posts/" + postId, {
+    //     method: "PATCH",
+    //     body: JSON.stringify({
+    //         title: title.value
+    //     }),
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     }
+    // });
 
-    if (response.ok) {
-        overlay.classList.add("hidden"); // auto close
-    }
+    // if (response.ok) {
+    //     overlay.classList.add("hidden"); // auto close
+    // }
 });
 
 
@@ -144,6 +200,12 @@ settingsOverlay.addEventListener("click", (event) => {
 });
 
 
+// my listing function
+document.getElementById('mylisting').addEventListener('click', function(){
+    console.log('hi')
+                window.location.href = "../mylistings/mylisting.html";
+
+})
 
 
 
@@ -152,8 +214,7 @@ settingsOverlay.addEventListener("click", (event) => {
 
 
 
-
-
+// saved page
 document.getElementById('viewsaved').addEventListener('click', function(){
     console.log('hi')
                 window.location.href = "../saved/saved.html";

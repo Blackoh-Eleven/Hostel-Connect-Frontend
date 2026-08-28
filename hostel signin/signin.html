@@ -183,7 +183,7 @@
 
 
       <!-- Social login -->
-      <div class="social-buttons">
+      <div class="social-buttons" id="google">
 
         <button class="social-btn" type="button" id="signin-btn">
 
@@ -196,7 +196,7 @@
         </button>
 
 
-        <button class="social-btn" type="button">
+        <button class="social-btn" type="button" id="apple">
 
           <span class="apple-icon">
             <strong><i class="fa-brands fa-apple"></i></strong>
@@ -223,6 +223,11 @@
     </section>
 
   </main>
+
+   <div id="nofunctiontoast" class="nofunctiontoast">
+    <i class="fa-solid fa-circle-info"></i>
+    <span id="toastMessage"></span>
+</div>
 
   <script src="signin.js"></script>
 </body>

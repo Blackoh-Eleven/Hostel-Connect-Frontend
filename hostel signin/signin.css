@@ -576,3 +576,63 @@ input::placeholder {
   
 
 }
+
+
+/* no functional toasts */
+.nofunctiontoast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+
+    transform: translate(-50%, 100px);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: max-content;
+    max-width: calc(100% - 40px);
+
+    padding: 13px 18px;
+
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999999;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.nofunctiontoast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nofunctiontoast i {
+    color: #4F46E5;
+    font-size: 16px;
+}
+
+@media (max-width: 500px) {
+    .nofunctiontoast {
+        bottom: 200px;
+        max-width: calc(100% - 30px);
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}

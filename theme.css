@@ -1,0 +1,20 @@
+
+
+:root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --text: #111827;
+    --border: #E5E7EB;
+}
+
+body.dark-mode {
+    --bg: #0F1117;
+    --surface: #181B23;
+    --text: #F9FAFB;
+    --border: #2A2F3A;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}

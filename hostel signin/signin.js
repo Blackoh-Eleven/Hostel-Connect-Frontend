@@ -4,6 +4,38 @@ backBtn.addEventListener("click", () => {
     history.back();
 });
 
+let toastTimer;
+
+function showToast(message, duration = 3000) {
+
+    const toastfunctionless = document.getElementById("nofunctiontoast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    if (!toastfunctionless || !toastMessage) return;
+
+    // remove previous imer
+    clearTimeout(toastTimer);
+
+    // message
+    toastMessage.textContent = message;
+
+    // Show toast
+    toastfunctionless.classList.add("show");
+
+    // Hide after duration
+    toastTimer = setTimeout(() => {
+        toastfunctionless.classList.remove("show");
+    }, duration);
+}
+
+document.getElementById('google').addEventListener('click',function(){
+    showToast('You cant signin with Google at the moment')
+})
+
+document.getElementById('apple').addEventListener('click',function(){
+    showToast('You cant signin with Apple at the moment')
+})
+
 
 const form = document.querySelector("form");
 

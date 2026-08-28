@@ -7,6 +7,10 @@
     <title>Profile | Hostel Connect</title>
 
     <link rel="stylesheet" href="profile.css">
+    <script src="https://kit.fontawesome.com/8eaba6d24e.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -74,7 +78,7 @@
         </div>
 
 
-        <div class="settings-section">
+        <div class="settings-section" id="account">
 
             <h3>Account</h3>
 
@@ -134,7 +138,7 @@
 
                 </div>
 
-                <div class="settings-text">
+                <div class="settings-text" id="locationSettings">
                     <strong>Location Settings</strong>
                     <span>Manage your preferred location</span>
                 </div>
@@ -156,7 +160,7 @@
         </div>
 
 
-        <div class="settings-section">
+        <div class="settings-section" id="activity">
 
             <h3>Activity</h3>
 
@@ -199,11 +203,11 @@
         </div>
 
 
-        <div class="settings-section">
+        <div class="settings-section" >
 
             <h3>Community</h3>
 
-            <button class="settings-item" id="feedback">
+            <button class="settings-item" >
 
                 <div class="settings-icon">
 
@@ -220,7 +224,7 @@
 
                 </div>
 
-                <div class="settings-text">
+                <div class="settings-text" id="feedback">
                     <strong>Feedback</strong>
                     <span>Tell us what you think</span>
                 </div>
@@ -298,7 +302,7 @@
 
                 </div>
 
-                <div class="settings-text">
+                <div class="settings-text" id="inviteFriends">
                     <strong>Invite Friends</strong>
                     <span>Invite students to Hostel Connect</span>
                 </div>
@@ -320,7 +324,7 @@
         </div>
 
 
-        <button class="settings-logout" id="settingsLogout">
+        <button class="settings-logout" id="logout">
 
             <svg viewBox="0 0 24 24"
                 fill="none"
@@ -536,12 +540,12 @@
                 <h2 class="section-title">Account</h2>
             </div>
 
-            <div class="account-list">
+            <div class="account-list" id="mylisting">
 
                 <button class="account-item" >
 
                     <div>
-                        <strong id="gotolistpage">My Listings</strong>
+                        <strong >My Listings</strong>
                         <span>View your hostel listings</span>
                     </div>
 
@@ -649,6 +653,11 @@
         </div>
 
     </div>
+
+    <div id="nofunctiontoast" class="nofunctiontoast">
+    <i class="fa-solid fa-circle-info"></i>
+    <span id="toastMessage"></span>
+</div>
 
 
     <script src="profile.js"></script>

@@ -1,3 +1,5 @@
+
+
 function navigateTo(page) {
 
     switch (page) {

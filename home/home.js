@@ -1,3 +1,47 @@
+// toast
+
+let toastTimer;
+
+function showToast(message, duration = 3000) {
+
+    const toastfunctionless = document.getElementById("nofunctiontoast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    if (!toastfunctionless || !toastMessage) return;
+
+    // remove previous imer
+    clearTimeout(toastTimer);
+
+    // message
+    toastMessage.textContent = message;
+
+    // Show toast
+    toastfunctionless.classList.add("show");
+
+    // Hide after duration
+    toastTimer = setTimeout(() => {
+        toastfunctionless.classList.remove("show");
+    }, duration);
+}
+
+document.getElementById('overview').addEventListener('click',function(){
+    showToast('Dont fret! Overview Featue will be rolled out soon')
+})
+
+document.getElementById('Preference').addEventListener('click',function(){
+    showToast('Dont Fret Preference Feature will be updated soon')
+})
+
+document.getElementById('helpAndSupport').addEventListener('click',function(){
+    showToast('Dont Fret help and Support Feature will be updated soon')
+})
+
+document.getElementById('about').addEventListener('click',function(){
+    showToast('Dont Fret About Feature will be updated soon')
+})
+
+
+
 let allPosts = [];
 
 let notificationbox = document.getElementById('insidenotification')
@@ -579,6 +623,190 @@ function createSelfConCard(post) {
     `;
 }
 
+// main page listing
+// function createListingCard(post) {
+//     const card = document.createElement("div");
+
+//     card.classList.add("listing-card");
+//     if (!post.postedBy) return;
+
+// card.innerHTML = `
+//     <div class="listing-img">
+//         <span class="listing-tag">Available</span>
+       
+//          <img src="${post.images[0]}" alt="Hostel">
+
+//  <button class="save-btn">
+//             <i class="${post.saved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+//         </button>
+//     </div>
+
+//     <div class="listing-body">
+//         <h3>
+//             ₦${post.price.toLocaleString()}
+//             <span>/yr</span>
+//         </h3>
+
+//         <p>${post.location}</p>
+
+//         <p>${post.roomType} • ${post.title}</p>
+
+//          <P class="poster-details"></P>
+
+//         <button class="more" data-details="${post.postedBy.fullName}" data-phone="${post.postedBy.phoneNumber}">more</button>
+//     </div>
+// `
+// let moreBtns = document.querySelectorAll('.more');
+// // if (!post.postedBy) return;
+
+
+// // moreBtns.forEach(morebtn =>  morebtn.addEventListener('click', function () {
+// //         console.log(this.dataset.location);
+// //         document.querySelectorAll('.testing').textContent = this.dataset.location
+// //     })
+// // )
+
+
+// moreBtns.forEach(morebtn => {
+//     morebtn.addEventListener('click', function () {
+//         console.log(this.dataset.location);
+
+//         const testing = document.querySelector('.poster-details');
+
+//         console.log(testing);
+
+//        this.parentElement.querySelector('.poster-details').textContent = `Listed By ${this.dataset.details}
+
+//        Contact via whatsapp ${this.dataset.phone}
+//        `;
+//     });
+// });
+
+// ;
+
+
+
+
+
+
+
+
+
+
+// // moreBtns.forEach(morebtn =>  morebtn.addEventListener('click', function () {
+// //         console.log(this.dataset.location);
+// //         document.getElementById('testing').textContent = this.dataset.location
+// //     })
+// // )
+
+
+// // edit profile 
+
+
+// // saveBtn.addEventListener("click", async () => {
+
+// //     // send PATCH request
+// //     const response = await fetch("/posts/" + postId, {
+// //         method: "PATCH",
+// //         body: JSON.stringify({
+// //             title: title.value
+// //         }),
+// //         headers: {
+// //             "Content-Type": "application/json"
+// //         }
+// //     });
+
+// //     if (response.ok) {
+// //         overlay.classList.add("hidden"); // auto close
+// //     }
+// // });
+
+
+
+
+// let toastbox = document.getElementById('toast');
+// const saveBtn = card.querySelector('.save-btn');
+// saveBtn.addEventListener('click', async function () {
+
+
+//         try {
+//         navigator.vibrate?.(100);
+//     } catch (error) {
+//         console.log('Vibration not available');
+//     }
+
+
+
+
+
+//     let postId = post._id
+//     // console.log(postId);
+
+
+//     // async function bookMark(postId) {
+//     const token = localStorage.getItem('token');
+
+//     const res = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/posts/${postId}/save`, {
+//         method: 'POST',
+//         headers: {
+//             'Authorization': `Bearer ${token}`
+//         }
+//     });
+
+    
+//     const data = await res.json();
+//     console.log(data.saved)
+//     // console.log(data); 
+
+//     function showMessage(){
+
+//     if (data.saved === true){
+//              toastbox.textContent = `Added to saved`
+//                  toastbox.style.display = 'flex'
+//           setTimeout(()=>{
+//                   toastbox.style.display = 'none'
+//              },3000)
+//     }else if(data.saved === false){
+//                     toastbox.textContent = `Removed from saved`
+//                  toastbox.style.display = 'flex'
+//           setTimeout(()=>{
+//                   toastbox.style.display = 'none'
+//              },3000)
+//     }
+// }
+
+
+//     if (data.saved) {
+//         showMessage()
+//     const icon = this.querySelector("i");
+//     icon.classList.remove("fa-regular");
+//     icon.classList.add("fa-solid");
+
+
+
+
+
+// } else {
+
+//     const icon = this.querySelector("i");
+//     icon.classList.remove("fa-solid");
+//     icon.classList.add("fa-regular");
+
+//     showMessage()
+// }
+
+
+
+
+// });
+
+//     document
+//         .getElementById("listingContainer")
+//         .appendChild(card);
+// }
+
+
+
 
 function createListingCard(post) {
     const card = document.createElement("div");
@@ -607,7 +835,15 @@ card.innerHTML = `
 
         <p>${post.roomType} • ${post.title}</p>
 
-         <P class="poster-details"></P>
+        <p class="listing-desc">${post.description}</p>
+
+        <div class="amenities">
+            ${(post.amenities || []).map(a => `<span class="amenity-tag">${a}</span>`).join('')}
+        </div>
+
+        <p class="listing-date">Posted ${new Date(post.createdAt).toLocaleDateString()}</p>
+
+        <p class="poster-details"></p>
 
         <button class="more" data-details="${post.postedBy.fullName}" data-phone="${post.postedBy.phoneNumber}">more</button>
     </div>
@@ -780,9 +1016,7 @@ async function loadNotifications() {
 
     const notifications = await res.json();
 
-    console.log(notifications);
-    console.log(notifications.read)
-
+    console.log(notifications); 
 
 notifications.forEach(notificationMainMsg => {
     notificationbox.innerHTML += `
@@ -919,6 +1153,13 @@ document.getElementById("sidebaropen").addEventListener("click", function () {
 });
 
 
+document.getElementById('mylisting').addEventListener('click', function(){
+    console.log('hi')
+                window.location.href = "../mylistings/mylisting.html";
+
+})
+
+
 
 
 const pills = document.querySelectorAll(".pill");
@@ -982,3 +1223,6 @@ document.getElementById('logout').addEventListener('click' ,function(){
 // cancelBtn.addEventListener("click", () => {
 //     overlay.classList.add("hidden");
 // });
+
+
+

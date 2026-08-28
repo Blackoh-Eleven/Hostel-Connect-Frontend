@@ -1,0 +1,414 @@
+:root {
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-primary-light: #EEF2FF;
+  --color-primary-subtle: #E0E7FF;
+
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  --color-border: #E5E7EB;
+
+  --color-success: #10B981;
+  --color-success-light: #ECFDF5;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-5);
+}
+
+
+/* HEADER */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+
+.page-header h1 {
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+.page-header p {
+  margin-top: 5px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+
+.back-btn {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: 0.2s ease;
+}
+
+
+.back-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+
+/* LISTINGS */
+
+.listings-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+
+.listing-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.listing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* IMAGE */
+
+.listing-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  background: var(--color-primary-light);
+}
+
+
+.no-image {
+  height: 210px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 35px;
+}
+
+
+/* CARD CONTENT */
+
+.listing-content {
+  padding: var(--space-5);
+}
+
+
+.listing-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+
+.listing-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+
+  margin-bottom: var(--space-4);
+}
+
+
+.listing-location i {
+  color: var(--color-primary);
+}
+
+
+.listing-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+
+  margin-bottom: var(--space-4);
+}
+
+
+.listing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+
+.meta-item {
+  padding: 7px 10px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+
+  border-radius: var(--radius-sm);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* AMENITIES */
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-top: var(--space-4);
+}
+
+
+.amenity {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+
+  padding: 6px 9px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+
+/* DATE */
+
+.listing-date {
+  margin-top: var(--space-4);
+
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+
+/* LOADING */
+
+.loading-state {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-3);
+
+  color: var(--color-text-secondary);
+}
+
+
+.spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid var(--color-primary-subtle);
+  border-top-color: var(--color-primary);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* EMPTY */
+
+.empty-state,
+.error-state {
+  text-align: center;
+
+  max-width: 420px;
+
+  margin: 70px auto;
+}
+
+
+.empty-icon,
+.error-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto var(--space-4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+
+.empty-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+
+.error-icon {
+  background: #FEF2F2;
+  color: var(--color-danger);
+}
+
+
+.empty-state h2,
+.error-state h2 {
+  font-size: 19px;
+  margin-bottom: var(--space-2);
+}
+
+
+.empty-state p,
+.error-state p {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* RETRY */
+
+.retry-btn {
+  margin-top: var(--space-5);
+
+  padding: 11px 18px;
+
+  background: var(--color-primary);
+  color: white;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+
+.retry-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+
+/* UTIL */
+
+.hidden {
+  display: none !important;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 700px) {
+
+  .page {
+    padding: var(--space-8);
+  }
+
+  .listings-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (min-width: 1000px) {
+
+  .listings-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+

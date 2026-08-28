@@ -2,6 +2,8 @@ const token = localStorage.getItem('token');
 
 const form = document.querySelector("form");
 const toastbox = document.getElementById('toast');
+const myposts = []
+
 
 function showToast(message) {
     toastbox.textContent = message;
@@ -107,6 +109,8 @@ form.addEventListener("submit", async function (e) {
 
 
         console.log("Post being sent:", postAndAuthorInfo);
+        myposts.push(postAndAuthorInfo)
+        console.log(myposts)
 
 
 // send to backend

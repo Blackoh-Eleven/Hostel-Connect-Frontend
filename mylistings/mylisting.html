@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Listings | Hostel Connect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="mylisting.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+            <button class="back-btn" id="backBtn" aria-label="Go back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div>
+                <h1>My Listings</h1>
+                <p id="listingCount">Loading your listings...</p>
+            </div>
+        </header>
+
+
+        <section class="listings-section">
+
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading your listings...</p>
+            </div>
+
+
+            <div id="listingsContainer" class="listings-container"></div>
+
+
+            <div id="emptyState" class="empty-state hidden">
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <h2>No listings yet</h2>
+
+                <p>
+                    You haven't listed a hostel yet.
+                    Your listings will appear here.
+                </p>
+
+            </div>
+
+
+            <div id="errorState" class="error-state hidden">
+
+                <div class="error-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <h2>Couldn't load your listings</h2>
+
+                <p>Please check your connection and try again.</p>
+
+                <button id="retryBtn" class="retry-btn">
+                    Try again
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+    <script src="mylisting.js"></script>
+
+</body>
+</html>
+
