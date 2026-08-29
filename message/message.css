@@ -47,14 +47,12 @@
 
 /* Dark mode */
 
-body.dark-mode {
+[data-theme="dark"] {
     --color-bg: #111827;
     --color-surface: #1F2937;
-
     --color-text-primary: #F9FAFB;
     --color-text-secondary: #D1D5DB;
     --color-text-muted: #D1D5DB;
-
     --color-border: #374151;
 
     --color-primary-light: #312E81;

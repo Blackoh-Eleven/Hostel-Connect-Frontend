@@ -1187,19 +1187,17 @@ const darkModeBtn = document.getElementById("darkModeBtn");
 
 darkModeBtn.addEventListener("click", () => {
 
-    document.body.classList.toggle("dark-mode");
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
 
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("darkMode", "enabled");
-    } else {
-        localStorage.setItem("darkMode", "disabled");
-    }
+    const newTheme =
+        currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+
+    localStorage.setItem("theme", newTheme);
 
 });
-
-if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-}
 
 
 document.getElementById('logout').addEventListener('click' ,function(){
