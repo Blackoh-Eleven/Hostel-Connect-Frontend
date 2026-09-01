@@ -1224,3 +1224,8 @@ document.getElementById('logout').addEventListener('click' ,function(){
 
 
 
+
+
+
+
+# MONGO_URI=mongodb+srv://maragoka22_db_user:mymongopASS1@cluster0black.fj4aqpp.mongodb.net/hostelConnect?appName=Cluster0black
