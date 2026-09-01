@@ -84,6 +84,10 @@ body {
     transform: translateY(-1px);
 }
 
+.nav-signup:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 
    /* HERO */
@@ -232,6 +236,11 @@ h1 span {
 
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-signup:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 
