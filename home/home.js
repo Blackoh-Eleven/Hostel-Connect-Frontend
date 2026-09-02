@@ -1,3 +1,24 @@
+alert(` \u26A0  IMPORTANT — PLEASE READ
+
+Hostel Connect connects students directly with hostel owners
+and managers.
+
+\uD83D\uDEA8 NEVER PAY FOR A HOSTEL YOU HAVE NOT PHYSICALLY INSPECTED.
+
+Confirm the price, availability, location and other terms
+directly with the hostel manager.
+
+\uD83D\uDCB0 PRICE TOO HIGH?
+If you believe a listing is unusually expensive or the listed
+price doesn't match the actual price, REPORT THE LISTING.
+
+If you notice anything suspicious or misleading, please
+report it to us.
+
+Our goal is to make hostel hunting safer, easier and
+more affordable for students.`);
+
+
 // toast
 
 let toastTimer;
