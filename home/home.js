@@ -366,7 +366,7 @@ document.getElementById('selfcon-btn').addEventListener('click', function () {
             <div class="mini-card">
 
                 <div class="mini-card-img">
-                <img src="${post.images}" alt="Hostel">
+                <img src="${post.images[0]}" alt="Hostel">
                     <span class="mini-tag">Available</span>
                     
 
@@ -417,7 +417,7 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
             <div class="mini-card">
 
                 <div class="mini-card-img">
-                <img src="${post.images}" alt="Hostel">
+                <img src="${post.images[0]}" alt="Hostel">
                     <span class="mini-tag">Available</span>
 
          
@@ -462,7 +462,7 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
 
                 <div class="mini-card-img">
                     <span class="mini-tag">Available</span>
-                    <img src="${post.images}" alt="Hostel">
+                    <img src="${post.images[0]}" alt="Hostel">
 
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
@@ -510,7 +510,7 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
 
                 <div class="mini-card-img">
                     <span class="mini-tag">Available</span>
-                    <img src="${post.images}" alt="Hostel">
+                    <img src="${post.images[0]}" alt="Hostel">
 
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
@@ -558,7 +558,7 @@ document.getElementById('singleroom-btn').addEventListener('click', function () 
 
                 <div class="mini-card-img">
                     <span class="mini-tag">Available</span>
-                    <img src="${post.images}" alt="Hostel">
+                    <img src="${post.images[0]}" alt="Hostel">
                     <svg viewBox="0 0 24 24" fill="none"
                         stroke-width="1.8"
                         stroke-linecap="round"
@@ -835,17 +835,32 @@ card.innerHTML = `
 
         <p>${post.roomType} • ${post.title}</p>
 
-        <p class="listing-desc">${post.description}</p>
+<p class="listing-desc">${post.description}</p>
 
-        <div class="amenities">
-            ${(post.amenities || []).map(a => `<span class="amenity-tag">${a}</span>`).join('')}
-        </div>
+<div class="amenities">
+    ${(post.amenities || []).map(a => `<span class="amenity-tag">${a}</span>`).join('')}
+</div>
 
-        <p class="listing-date">Posted ${new Date(post.createdAt).toLocaleDateString()}</p>
+<p class="listing-date">
+    Posted ${new Date(post.createdAt).toLocaleDateString()}
+</p>
 
-        <p class="poster-details"></p>
 
-        <button class="more" data-details="${post.postedBy.fullName}" data-phone="${post.postedBy.phoneNumber}">more</button>
+<div class="post-images">
+    ${(post.images || []).map(image => `
+        <img src="${image}" alt="Hostel image">
+    `).join('')}
+</div>
+
+<p class="poster-details"></p>
+
+<button class="more"
+    data-details="${post.postedBy.fullName}"
+    data-phone="${post.postedBy.phoneNumber}">
+    more
+</button>
+
+
     </div>
 `
 let moreBtns = document.querySelectorAll('.more');
@@ -864,6 +879,9 @@ moreBtns.forEach(morebtn => {
         console.log(this.dataset.location);
 
         const testing = document.querySelector('.poster-details');
+        testing.style.display = 'block'
+        const images = document.querySelector(".post-images");
+        images.style.display = 'flex'
 
         console.log(testing);
 
