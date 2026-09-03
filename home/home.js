@@ -895,25 +895,52 @@ let moreBtns = document.querySelectorAll('.more');
 // )
 
 
-moreBtns.forEach(morebtn => {
-    morebtn.addEventListener('click', function () {
-        console.log(this.dataset.location);
+// moreBtns.forEach(morebtn => {
+//     morebtn.addEventListener('click', function () {
+//         console.log(this.dataset.details);
 
-        const testing = document.querySelector('.poster-details');
-        testing.style.display = 'block'
-        const images = document.querySelector(".post-images");
-        images.style.display = 'flex'
+//         // const testing = document.querySelector('.poster-details');
+//         // testing.style.display = 'block'
+//         // const images = document.querySelector(".post-images");
+//         // images.style.display = 'flex'
 
-        console.log(testing);
+//         // console.log(testing);
 
-       this.parentElement.querySelector('.poster-details').textContent = `Listed By ${this.dataset.details}
+//        this.parentElement.querySelector('.poster-details').textContent = `Listed By ${this.dataset.details}
 
-       Contact via whatsapp ${this.dataset.phone}
-       `;
-    });
+//        Contact via whatsapp ${this.dataset.phone}
+//        `;
+//     });
+// });
+
+// moreBtns.forEach(morebtn =>  morebtn.addEventListener('click', function () {
+
+// document.addEventListener('click', function (e) {
+//     if (e.target.classList.contains('more')) {
+//         const btn = e.target;
+//         console.log(btn)
+
+//         btn.parentElement.querySelector('.poster-details').textContent =
+//             `Listed By ${btn.dataset.details}
+
+// Contact via whatsapp ${btn.dataset.phone}`;
+//     }
+// });
+// }))
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('more')) {
+        const btn = e.target;
+        const post = btn.parentElement;
+
+        post.querySelector('.poster-details').style.display = 'block';
+        post.querySelector('.post-images').style.display = 'flex';
+
+        post.querySelector('.poster-details').textContent =
+            `Listed By ${btn.dataset.details}
+
+Contact via whatsapp ${btn.dataset.phone}`;
+    }
 });
-
-;
 
 
 
