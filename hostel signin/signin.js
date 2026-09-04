@@ -217,7 +217,7 @@ if (!identifier) {
 
 
     try {
-        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/signin", {
+        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/forgotPassword", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -229,6 +229,13 @@ if (!identifier) {
         const data = await res.json();
         console.log(data);
 
+        if(data.message === 'user not found'){
+            forgotMessage.style.color = '#DC2626';
+        forgotMessage.textContent = data.message;
+        }else{
+            forgotMessage.textContent = data.message;
+            forgotMessage.style.color = '#16A34A';
+        }
     }catch(err){
         console.error(err)
     }
@@ -237,8 +244,9 @@ if (!identifier) {
 // Temporary frontend response
 // We will replace this with your backend request.
 
-forgotMessage.textContent = 'Reset instructions will be sent shortly.';
-forgotMessage.style.color = '#16A34A';
+// forgotMessage.textContent = 'Reset instructions will be sent shortly.';
+
+// forgotMessage.style.color = '#16A34A';
     
 
 });
