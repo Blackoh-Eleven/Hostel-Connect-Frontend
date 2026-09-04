@@ -62,6 +62,8 @@ form.addEventListener("submit", async function (e) {
         password: passWordValue
     };
 
+
+
     try {
         const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/signin", {
             method: "POST",
@@ -102,3 +104,142 @@ showpassword.addEventListener('click',function(){
         password.type = 'password';
     }
 })
+
+
+
+/* =========================
+FORGOT PASSWORD MODAL
+========================= */
+
+const forgotLink = document.querySelector('.forgot-link');
+
+const forgotModal = document.getElementById('forgotModal');
+
+const forgotClose = document.getElementById('forgotClose');
+
+const backToSignin = document.getElementById('backToSignin');
+
+const forgotForm = document.getElementById('forgotForm');
+
+const forgotMessage = document.getElementById('forgotMessage');
+
+const forgotEmail = document.getElementById('forgotEmail');
+
+const forgotpassword = document.getElementById('newPassword');
+
+
+// Open modal
+
+forgotLink.addEventListener('click', function (e) {
+
+
+e.preventDefault();
+
+forgotModal.classList.add('active');
+
+document.body.classList.add('modal-open');
+
+forgotEmail.focus();
+
+
+});
+
+// Close modal
+
+function closeForgotModal() {
+
+
+forgotModal.classList.remove('active');
+
+document.body.classList.remove('modal-open');
+
+forgotForm.reset();
+
+forgotMessage.textContent = '';
+
+
+}
+
+forgotClose.addEventListener('click', closeForgotModal);
+
+backToSignin.addEventListener('click', closeForgotModal);
+
+// Close when clicking outside the modal box
+
+forgotModal.addEventListener('click', function (e) {
+
+
+if (e.target === forgotModal) {
+    closeForgotModal();
+}
+
+
+});
+
+// Close with Escape key
+
+document.addEventListener('keydown', function (e) {
+
+
+if (
+    e.key === 'Escape' &&
+    forgotModal.classList.contains('active')
+) {
+    closeForgotModal();
+}
+
+
+});
+
+// Forgot password form
+
+forgotForm.addEventListener('submit', async function (e) {
+
+
+e.preventDefault();
+
+const identifier = forgotEmail.value.trim();
+const passwordnew = forgotpassword.value.trim();
+console.log(identifier)
+console.log(passwordnew)
+
+if (!identifier) {
+    forgotMessage.textContent = 'Please enter your email or phone number.';
+    forgotMessage.style.color = '#DC2626';
+    return;
+}
+
+
+         let usernewdetails = {
+           email :identifier,
+           passwordnew:passwordnew
+} 
+
+
+    try {
+        const res = await fetch("https://hostel-connect-backend-a7sq.onrender.com/signin", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usernewdetails)
+        });
+
+
+        const data = await res.json();
+        console.log(data);
+
+    }catch(err){
+        console.error(err)
+    }
+   
+
+// Temporary frontend response
+// We will replace this with your backend request.
+
+forgotMessage.textContent = 'Reset instructions will be sent shortly.';
+forgotMessage.style.color = '#16A34A';
+    
+
+});
+

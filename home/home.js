@@ -884,7 +884,7 @@ card.innerHTML = `
 
     </div>
 `
-let moreBtns = document.querySelectorAll('.more');
+// let moreBtns = document.querySelectorAll('.more');       
 // if (!post.postedBy) return;
 
 

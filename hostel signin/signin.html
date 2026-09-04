@@ -224,6 +224,99 @@
 
   </main>
 
+
+  <!-- Forgot Password Modal -->
+
+<div class="forgot-modal" id="forgotModal">
+
+  <div class="forgot-modal-box">
+
+
+<button class="forgot-close" id="forgotClose" type="button">
+  &times;
+</button>
+
+<div class="forgot-icon">
+  <i class="fa-solid fa-lock"></i>
+</div>
+
+<h2>Forgot your password?</h2>
+
+<p class="forgot-description">
+  Enter the email or phone number connected to your account
+  and we'll help you reset your password.
+</p>
+
+<form id="forgotForm">
+
+  <div class="field-group">
+
+    <label for="forgotEmail">
+      Email or Phone Number
+    </label>
+
+    <div class="input-wrap">
+
+      <span class="input-icon">
+        <i class="fa-solid fa-envelope"></i>
+      </span>
+
+      <input
+        id="forgotEmail"
+        type="text"
+        placeholder="Enter your email or phone number"
+        autocomplete="off"
+        required
+      >
+
+    </div>
+
+     <div class="input-wrap">
+
+    <span class="input-icon">
+      <i class="fa-solid fa-lock"></i>
+    </span>
+
+    <input
+      id="newPassword"
+      type="password"
+      placeholder="Enter your new password"
+      autocomplete="new-password"
+      required
+    >
+
+  </div>
+
+
+  </div>
+
+  <span id="forgotMessage"></span>
+
+  <button
+    class="primary-btn forgot-submit"
+    type="submit"
+    id="forgotSubmit"
+  >
+    Send reset instructions
+  </button>
+
+</form>
+
+<button
+  class="back-signin"
+  type="button"
+  id="backToSignin"
+>
+  <i class="fa-solid fa-arrow-left"></i>
+  Back to sign in
+</button>
+
+
+  </div>
+
+</div>
+
+
    <div id="nofunctiontoast" class="nofunctiontoast">
     <i class="fa-solid fa-circle-info"></i>
     <span id="toastMessage"></span>
