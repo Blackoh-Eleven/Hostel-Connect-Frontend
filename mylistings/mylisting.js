@@ -218,6 +218,7 @@ async function loadMyListing() {
 
             listingsContainer.appendChild(card);
 
+              const token = localStorage.getItem("token");
 
             let deletebtns = card.querySelector(".delete-btn")
         deletebtns.addEventListener('click', async function(){
@@ -227,20 +228,34 @@ async function loadMyListing() {
     if (!confirmDelete) return;
 
     try{
-        console.log()
-         console.log(this.dataset.id)
 
          let postid = this.dataset.id
-
+         console.log(postid)
+console.log('before fetch')
          const response = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/posts/${postid}`,{
             method: 'DELETE',
             headers: {
-                Authorization:`Bearer ${localStorage.getItem('token')}`
+                Authorization: `Bearer ${token}`
             }
          })
+         
+
+        //  console.log(postid)
+        
 
          const result = await response.json()
          console.log(result)
+
+         console.log('afterfetch')
+
+// response
+             if (!response.ok) {
+            alert(result.message || "Failed to delete listing");
+            return;
+        }
+
+        // reload and remove
+        card.remove();
 
 
 
