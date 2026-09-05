@@ -171,6 +171,8 @@ async function loadMyListing() {
                         ${escapeHTML(post.title || "Untitled listing")}
                     </h2>
 
+
+
                     <div class="listing-location">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>
@@ -198,11 +200,52 @@ async function loadMyListing() {
                             : ""
                     }
 
+
+                      <button
+                            class="delete-btn"
+                            data-id="${post._id}"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                      </button>
+
                 </div>
+
+
             `;
 
 
             listingsContainer.appendChild(card);
+
+
+            let deletebtns = card.querySelector(".delete-btn")
+        deletebtns.addEventListener('click', async function(){
+    //    console.log(this.dataset.id)
+           const confirmDelete = confirm("Delete this listing?");
+
+    if (!confirmDelete) return;
+
+    try{
+        console.log()
+         console.log(this.dataset.id)
+
+         let postid = this.dataset.id
+
+         const response = await fetch(`https://hostel-connect-backend-a7sq.onrender.com/posts/${postid}`,{
+            method: 'DELETE',
+            headers: {
+                Authorization:`Bearer ${localStorage.getItem('token')}`
+            }
+         })
+
+         const result = await response.json()
+         console.log(result)
+
+
+
+    }catch(err){console.error(err)}
+})
 
         });
 
@@ -239,3 +282,5 @@ backBtn.addEventListener("click", () => {
 
 
 loadMyListing();
+
+

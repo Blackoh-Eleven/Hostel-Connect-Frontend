@@ -215,6 +215,40 @@ button {
   margin-bottom: var(--space-4);
 }
 
+/* delete btn */
+
+.delete-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #fee2e2;
+    color: #dc2626;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+.delete-btn:active {
+    transform: scale(0.98);
+}
+
 
 .listing-location i {
   color: var(--color-primary);
