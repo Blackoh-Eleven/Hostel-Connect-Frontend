@@ -1,168 +1,147 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <title>Hostel Connect</title>
-
+<title>Hostel Connect</title>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGVX7X67TK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-JGVX7X67TK');
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-JGVX7X67TK');
 </script>
+
+
 </head>
 
 <body>
 
-    <header class="navbar">
 
-        <div class="logo">
-            <span>Hostel</span> Connect
-        </div>
+<header class="navbar">
 
-        <button class="nav-signup" 
-            onclick="window.location.href = 'hostel signup/signup.html';">
-            Sign up
-        </button>
+    <div class="logo">
+        <span>Hostel</span> Connect
+    </div>
 
-    </header>
+    <button class="nav-signup"
+        onclick="window.location.href = 'hostel signup/signup.html';">
+        Sign up
+    </button>
+
+</header>
 
 
-<div class="notice-ticker" id="noticeTicker">
+<div class="notice-ticker">
+
     <div class="ticker-content">
+
         &#x26A0; PHYSICALLY INSPECT BEFORE PAYMENT
         &nbsp;&nbsp; • &nbsp;&nbsp;
+
         REPORT SUSPICIOUS LISTINGS
         &nbsp;&nbsp; • &nbsp;&nbsp;
+
         VERIFY BEFORE YOU PAY
         &nbsp;&nbsp; • &nbsp;&nbsp;
-        MATRIC NO. "3 Digits" IS RESERVED FOR HOSTEL OWNERS AND MANAGERS
+
+        HOSTEL PRICES SHOULD BE CLEAR AND ACCESSIBLE
         &nbsp;&nbsp; • &nbsp;&nbsp;
+
     </div>
+
 </div>
 
-    <main class="hero">
 
-        <div class="hero-content">
+<main class="hero">
 
-            <div class="badge">
-                   &#x1F680; We are Live
-            </div>
+    <div class="hero-content">
 
-            <h1>
-                Find Your Next
-                <span>Hostel.</span>
-            </h1>
-
-            <p class="hero-text">
-                Hostel Connect makes it easier for students to find
-                hostels and connect directly with other students in Malete.
-            </p>
+        <div class="badge">
+            &#x1F680; Hostel Connect is Live
+        </div>
 
 
-            <div class="countdown-section">
-
-                <h2>Launch Countdown</h2>
-
-                <div class="countdown" id="time-space">
-                    Loading...
-                </div>
-
-            </div>
+        <h1>
+            Find Your Next
+            <span>Hostel.</span>
+        </h1>
 
 
-            <button class="main-signup" 
+        <p class="hero-text">
+            Find hostel listings and explore accommodation options
+            in Malete. Hostel Connect is making it easier for students
+            to discover hostels and make informed decisions.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <button class="main-signup"
                 onclick="window.location.href = 'hostel signup/signup.html';">
-                Get Started
-                <span>→</span>
+
+                Explore Hostels
+
+                <span>&rarr;</span>
+
             </button>
 
 
-            <p class="construction">
-                Hostel Connect is currently under construction. <br>Identifying bottlenecks...
-            </p>
+            <button class="support-btn"
+                onclick="window.location.href = 'support.html';">
+
+                Sign Your Support
+
+                <span>&#9733;</span>
+
+            </button>
 
         </div>
 
-    </main>
 
-
-    <footer>
-
-        <p>
-            Developer:
-            <span>Blackoh</span>
+        <p class="support-text">
+            Students deserve clearer access to hostel prices.
+            <strong>Add your voice.</strong>
         </p>
 
-        <p class="year">
-            © 2026 Hostel Connect
-        </p>
 
-    </footer>
-
-
-    <script>
-
-        const targetDate =
-            new Date("September 3, 2026 00:00:00").getTime();
+            <p class="construction">
+    Hostel Connect is currently under construction.
+    <br>
+    More features and listings are coming soon.
+</p> 
+    </div>
 
 
-        setInterval(() => {
 
-            const now = new Date().getTime();
-
-            const distance = targetDate - now;
+</main>
 
 
-            if (distance <= 0) {
+<footer>
 
-                document.getElementById("time-space").textContent =
-                    "We're Live! 🎉";
+    <p>
+        Developer:
+        <span>Blackoh</span>
+    </p>
 
-                return;
-            }
+    <p class="year">
+        &copy; 2026 Hostel Connect
+    </p>
 
+</footer>
 
-            const days =
-                Math.floor(
-                    distance / (1000 * 60 * 60 * 24)
-                );
-
-
-            const hours =
-                Math.floor(
-                    (distance / (1000 * 60 * 60)) % 24
-                );
-
-
-            const minutes =
-                Math.floor(
-                    (distance / (1000 * 60)) % 60
-                );
-
-
-            const seconds =
-                Math.floor(
-                    (distance / 1000) % 60
-                );
-
-
-            document.getElementById("time-space").textContent =
-                `${days} Days : ${hours} Hrs : ${minutes} M : ${seconds} Sec`;
-
-        }, 1000);
-
-    </script>
 
 </body>
 
 </html>
-

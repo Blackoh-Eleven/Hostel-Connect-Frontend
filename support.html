@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="support.css">
+
+<title>Student Support | Hostel Connect</title>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+
+<div class="logo">
+    <span>Hostel</span> Connect
+</div>
+
+<button class="back-btn"
+    onclick="window.location.href = 'index.html';">
+
+    &larr; Back
+
+</button>
+
+
+</header>
+
+<main class="support-page">
+
+<section class="support-hero">
+
+    <div class="badge">
+        &#128172; Student Support Campaign
+    </div>
+
+
+    <h1>
+        Students Deserve
+        <span>Clearer Hostel Prices.</span>
+    </h1>
+
+
+    <p class="hero-text">
+
+        Finding a hostel shouldn't feel like a guessing game.
+
+        Students often have to depend on agents, word of mouth,
+        or conflicting information just to find out how much
+        accommodation actually costs.
+
+    </p>
+
+
+</section>
+
+
+
+<section class="problem-section">
+
+    <h2>
+        What's the problem?
+    </h2>
+
+
+    <p>
+
+        Hostel prices can be difficult for students to know
+        before starting their search. This can make it harder
+        to compare options, plan financially, and make informed
+        decisions.
+
+    </p>
+
+
+    <p>
+
+        We believe students should have easier access to
+        clear and transparent information about hostel prices
+        and available accommodation.
+
+    </p>
+
+</section>
+
+
+
+<section class="campaign-section">
+
+    <h2>
+        What are we asking for?
+    </h2>
+
+
+    <p>
+
+        We are asking for support for greater transparency
+        around student accommodation prices in Malete.
+
+    </p>
+
+
+    <div class="request-card">
+
+        <div class="request-icon">
+            &#128274;
+        </div>
+
+        <div>
+
+            <h3>
+                Transparent Hostel Information
+            </h3>
+
+            <p>
+
+                We want to work with the Students' Union and
+                other relevant stakeholders to make reliable
+                hostel price information easier for students
+                to access.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="request-card">
+
+        <div class="request-icon">
+            &#128101;
+        </div>
+
+        <div>
+
+            <h3>
+                Better Access for Students
+            </h3>
+
+            <p>
+
+                Students should be able to discover available
+                hostels and compare accommodation options
+                without unnecessary barriers.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<section class="support-form-section">
+
+    <div class="form-heading">
+
+        <div class="badge">
+            &#9733; Add Your Voice
+        </div>
+
+        <h2>
+            Sign Your Support
+        </h2>
+
+        <p>
+
+            If you believe students deserve clearer access
+            to hostel information, add your name below.
+
+        </p>
+
+    </div>
+
+
+    <form id="support-form">
+
+
+        <div class="form-group">
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label for="department">
+                Department
+            </label>
+
+            <input
+                type="text"
+                id="department"
+                name="department"
+                placeholder="e.g. Computer Science"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label for="level">
+                Level
+            </label>
+
+            <select
+                id="level"
+                name="level"
+                required
+            >
+
+                <option value="">
+                    Select your level
+                </option>
+
+                <option value="100">
+                    100 Level
+                </option>
+
+                <option value="200">
+                    200 Level
+                </option>
+
+                <option value="300">
+                    300 Level
+                </option>
+
+                <option value="400">
+                    400 Level
+                </option>
+
+                <option value="500">
+                    500 Level
+                </option>
+
+                <option value="600">
+                    600 Level
+                </option>
+
+                <option value="postgraduate">
+                    Postgraduate
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label for="email">
+                Email <span>(Optional)</span>
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+            >
+
+        </div>
+
+
+
+        <label class="agreement">
+
+            <input
+                type="checkbox"
+                id="agreement"
+                required
+            >
+
+            <span>
+                I support efforts to make hostel information
+                and prices clearer and more accessible to students.
+            </span>
+
+        </label>
+
+
+
+        <button
+            type="submit"
+            class="submit-btn"
+            id="submit-support"
+        >
+
+            Sign Your Support
+
+            <span>&rarr;</span>
+
+        </button>
+
+
+        <p class="form-note">
+
+            Your information will only be used for this
+            student support campaign.
+
+        </p>
+
+
+    </form>
+
+</section>
+
+
+
+<section class="closing-section">
+
+    <h2>
+        One voice can start a conversation.
+    </h2>
+
+    <p>
+
+        If you believe students deserve better access to
+        hostel information, add your voice.
+
+    </p>
+
+
+    <button
+        class="bottom-support-btn"
+        onclick="document.getElementById('fullName').focus();"
+    >
+
+        Add Your Voice
+        <span>&#9733;</span>
+
+    </button>
+
+</section>
+
+
+</main>
+
+<footer>
+
+
+<p>
+    A project by:
+    <span>H.C Team</span>
+</p>
+
+
+<p class="year">
+    &copy; 2026 Hostel Connect
+</p>
+
+
+</footer>
+
+<script src="support.js"></script>
+
+</body>
+
+</html>
