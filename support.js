@@ -3,69 +3,61 @@ let departmentvar = document.getElementById('department');
 let levelvar = document.getElementById('level');
 let emailvar = document.getElementById('email');
 
-
-
-
 const form = document.querySelector("form");
-form.addEventListener("submit", async function (e) {
-let nameval = namevar.value;
-let departmentval = departmentvar.value;
-let levelval = levelvar.value;
-let emailval = emailvar.value;
+const submitBtn = document.getElementById('submit-support');
 
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    console.log(nameval)
-    console.log(departmentval)
-        console.log(levelval)
-    console.log(emailval)
+    let nameval = namevar.value;
+    let departmentval = departmentvar.value;
+    let levelval = levelvar.value;
+    let emailval = emailvar.value;
 
-// save the answers to send to backed in ibject
+    console.log(nameval);
+    console.log(departmentval);
+    console.log(levelval);
+    console.log(emailval);
 
     let petitioner = {
         petitionerName: nameval,
         department: departmentval,
         level: levelval,
         email: emailval
-        
     };
 
+    try {
 
-    try{
-        const response = await fetch("https://hostel-connect-backend-a7sq.onrender.com/support",{
-            method:'POST',
-            headers:{
-                "content-Type": "application/json"
+        submitBtn.textContent = "Processing...";
+        submitBtn.disabled = true;
+
+        const response = await fetch("https://hostel-connect-backend-a7sq.onrender.com/support", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify(petitioner)
-        })
+            body: JSON.stringify(petitioner)
+        });
 
-        const data = await response.json()
-        console.log(data)
-if (response.ok) {
-    document.getElementById('submit-support').textContent = data.message
-    document.getElementById('submit-support').style.background = 'green'
+        const data = await response.json();
+        console.log(data);
 
-    form.reset()
-} else {
-    document.getElementById('submit-support').textContent = data.message
-    document.getElementById('submit-support').style.background = 'red'
-}
+        if (response.ok) {
+            submitBtn.textContent = data.message;
+            submitBtn.style.background = 'green';
 
-    }catch(err){
-        console.error(err)
+            form.reset();
+        } else {
+            submitBtn.textContent = data.message;
+            submitBtn.style.background = 'red';
+            submitBtn.disabled = false;
+        }
+
+    } catch (err) {
+        console.error(err);
+
+        submitBtn.textContent = "Something went wrong";
+        submitBtn.style.background = 'red';
+        submitBtn.disabled = false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+});
