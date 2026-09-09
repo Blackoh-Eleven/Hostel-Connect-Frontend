@@ -28,7 +28,7 @@ form.addEventListener("submit", async function (e) {
 
     try {
 
-        submitBtn.textContent = "Processing...";
+        submitBtn.textContent = "Please wait, server is waking up...Estimated time 50sec";
         submitBtn.disabled = true;
 
         const response = await fetch("https://hostel-connect-backend-a7sq.onrender.com/support", {
